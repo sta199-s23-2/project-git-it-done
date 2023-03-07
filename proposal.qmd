@@ -7,7 +7,7 @@ editor: visual
 
 ```{r}
 #| label: load-pkgs
-#| message: false
+
 
 library(tidyverse)
 ```
@@ -30,7 +30,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -50,11 +50,11 @@ library(tidyverse)
 
 ## Introduction and data
 
--   Identify the source of the data.
+-   The data set, ufo_sightings.csv, is from the CORGIS Dataset project.
 
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
+-   This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
 
--   Write a brief description of the observations.
+-   The observations collect data about UFO sightings worldwide, from date and time to city area, date documented, and more specific information about the description of the UFO, from size to lights.
 
 ## Research question
 
@@ -64,11 +64,11 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
--   Find one published credible article on the topic you are interested in researching.
+-   https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ Here is an article about how NASA will bring the scientific standard to the search for UFOs.
 
--   Provide a one paragraph summary about the article.
+-   This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -98,7 +98,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
