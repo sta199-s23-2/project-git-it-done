@@ -30,7 +30,13 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+Research Question #1 (dataset: ):
+
+Research Question #2 (dataset: ):
+
+Research Question #3 (dataset: coffee):
+
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -64,7 +70,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -90,6 +96,8 @@ library(tidyverse)
 
 -   Write a brief description of the observations.
 
+The source of the data is from the CORGIS (Collection Of Really Great, Interesting Situated) Dataset Project.
+
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
@@ -98,7 +106,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -111,5 +119,10 @@ library(tidyverse)
 ```{r}
 #| label: load-data-3
 
-# add code here
+coffee <- read_csv("data/coffee.csv")
+glimpse(coffee)
 ```
+
+Date and Method of Original Data Collection:
+
+Brief
