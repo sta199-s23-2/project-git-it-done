@@ -16,36 +16,38 @@ library(tidyverse)
 
 ## Introduction and data
 
--   Identify the source of the data.
+The data set, ufo_sightings.csv, is from the CORGIS Dataset project.                            This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
 
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
-
--   Write a brief description of the observations.
+The observations collect data about UFO sightings worldwide, from date and time to city area, date documented, and more specific information about the description of the UFO, from size to lights.
 
 ## Research question
+What is the most common location UFOs are sighted in? What is the most common size or shape of UFO? How can we analyze these reports to contribute to the dialogue about whether or not UFOs are evidence of alien life?
 
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+This is a complicated research topic because there is a lot of debate among the general public about whether or not UFOs are indicators of alien life. I believe that we can use this data to determine if there are any continuities across the data that might point to how solid these UFO reports are (essentially, if they are corroborated). I do not believe there will be enough correlation across the data to support the existence of alien life.
 
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
-
--   Identify the types of variables in your research question. Categorical? Quantitative?
-
-Research Question #1 (dataset: ):
+Several of the variables are categorical: date_time, city_area, state, country, ufo_shape,  described_encounter_length, description, and date_documented. The quantitative variables are encounter_length, latitude, and longitude.
 
 ## Literature
 
--   Find one published credible article on the topic you are interested in researching.
+Here is an article about how NASA will bring the scientific standard to the search for UFOs.
 
--   Provide a one paragraph summary about the article.
+https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/
+https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ 
 
--   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial phenomena). The University of Rochester outlines that some physicists and astronomers strongly dispute the existence of extraterrestrial life. It's argued that NASA is creating a commission to investigate UFOs and their connection to extraterrestrial life in order to bring some scientific credibility to the debate, by using technology to detect biosignatures. Biosignatures are signatures that we pick up on when a far-away planet is altered by its biosphere - this would be a sign of life. Overall, this article sums up how perhaps the most scientifically credible agency will get involved in the scientific research into what UFOs could mean.
+
+This research question builds on the research about UFO sightings worldwide, and looks at commonalities across sightings across time and place.
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-1
 
-# add code here
+#| label: load-data-2
+
+ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
+
+glimpse(ufo_sightings)
 ```
 
 # Data 2
@@ -121,7 +123,8 @@ glimpse(coffee)
 
 INTRODUCTION AND DATA
 
-Date and Method of Original Data Collection: These data were collected from the Coffee Quality Institute's review pages in January 2018. These data contain reviews of 1312 arabica and 28 robusta coffee beans from the Coffee Quality Institute's trained reviewers.
+Date and Method of Original Data Collection: These data were collected from the Coffee Quality Institute's review pages in January 2018. These data contain 
+reviews of 1312 arabica and 28 robusta coffee beans from the Coffee Quality Institute's trained reviewers.
 
 Each observation is a review on a type of coffee.
 
@@ -129,18 +132,41 @@ There doesn't seem to be any evident ethical concerns.
 
 RESEARCH QUESTION
 
-What is the relationship between the average altitude of the farm and the sweetness level of the coffee based on the country where the coffee was produced?
+What is the relationship between the average altitude of the farm and the 
+sweetness level of the coffee based on the country where the coffee was 
+produced?
 
-This question is important because the results of this study will demonstrate which country and at which altitude the coffee will be the sweetest or least sweet. This information will be important for coffee farmers who wish to produce sweet coffee (or vice versa) for their customers.
+This question is important because the results of this study will demonstrate 
+which country and at which altitude the coffee will be the sweetest or least 
+sweet. This information will be important for coffee farmers who wish to produce sweet coffee (or vice versa) for their customers.
 
-Our research will investigate the relationship between the average altitude of farm where the coffee is grown and the sweetness level of the coffee produced based on the country where the coffee was produced. We hypothesize that there will be a relationship between the altitude and sweetness as the altitude of where the coffee is grown can affect the type of environment that the coffee is grown in, which would have an impact on the taste of the coffee beans.
+Our research will investigate the relationship between the average altitude of 
+farm where the coffee is grown and the sweetness level of the coffee produced 
+based on the country where the coffee was produced. We hypothesize that there 
+will be a positive correlation between the altitude and sweetness, because the 
+literature showed that coffee beans grown at higher altitudes made coffee with
+a better taste. 
 
-The variable Location.Country (country where the coffee is produced) is a categorical variable, whereas the variables Data.Scores.Sweetness (sweetness level of the coffee on a scale of 1-10) and Location.Altitude.Average (the average altitude of the farm in which the coffee was grown) are quantitative variables.
+The variable "Location.Country" (country where the coffee is produced) is a categorical variable, whereas the variables "Data.Scores.Sweetness" (sweetness 
+level of the coffee on a scale of 1-10) and "Location.Altitude.Average"
+(the average altitude of the farm in which the coffee was grown) are 
+quantitative variables.
 
 LITERATURE
 
-This research article discusses the research into the sensory information about four different types of coffee, and how these attributes compared when coffee was grown at two different altitudes in the San Martin region of Peru. There was a 200 meter difference in the altitudes of coffee being grown and an ample amount -- 1500g -- of each type of coffee was grown in each location. Sensory factors "such as aroma, taste, aftertaste, acidity, body, consistency, balance, cleanliness of the cup, sweetness and beverage quality" were measured based on tables approved by the Specialty Coffee Association of America (SCAA). Moreover, the coffee tasters used to assess the coffee for this experiment were "certified by the Cooperativa Agraria Cafetalera y de Servicios Oro Verde". 
+This research article discusses the research into the sensory information about four different types of coffee, and how these attributes compared when coffee 
+was grown at two different altitudes in the San Martin region of Peru. There was 
+a 200 meter difference in the altitudes of coffee being grown and an ample 
+amount -- 1500g -- of each type of coffee was grown in each location. Sensory factors "such as aroma, taste, aftertaste, acidity, body, consistency, balance, cleanliness of the cup, sweetness and beverage quality" were measured based on tables approved by the Specialty Coffee Association of America (SCAA). Moreover, the coffee tasters used to assess the coffee for this experiment were "certified 
+by the Cooperativa Agraria Cafetalera y de Servicios Oro Verde". 
 
 Our research builds on the research described in this article, because it is comparing sweetness (a sensory attribute) of coffee harvested at different altitudes in a variety of regions worldwide, not just the San Martin region of Peru.
+
+Works Cited:
+
+Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). 
+Sensory analysis of four cultivars of coffee (0RW1S34RfeSDcfkexd09rT2Coffea arabica1RW1S34RfeSDcfkexd09rT2 L.), grown at different altitudes in the San 
+Martin region - Peru. Ciência Rural, 47(9). https://doi.org/10.1590/0103-8478cr20160882. 
+
 
 \
