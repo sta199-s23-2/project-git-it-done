@@ -60,24 +60,26 @@ library(tidyverse)
 
 -   What is the most common location UFOs are sighted in? What is the most common size or shape of UFO? How can we analyze these reports to contribute to the dialogue about whether or not UFOs are evidence of alien life?
 
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
+-   This is a complicated research topic because there is a lot of debate among the general public about whether or not UFOs are indicators of alien life. I believe that we can use this data to determine if there are any continuities across the data that might point to how solid these UFO reports are (essentially, if they are corroborated). I do not believe there will be enough correlation across the data to support the existence of alien life.
 
--   Identify the types of variables in your research question. Categorical? Quantitative?
+-   Several of the variables are categorical: date_time, city_area, state, country, ufo_shape, described_encounter_length, description, and date_documented. The quantitative variables are encounter_length, latitude, and longitude.
 
 ## Literature
 
 -   https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ Here is an article about how NASA will bring the scientific standard to the search for UFOs.
 
--   This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial
+-   This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial phenomena). The University of Rochester outlines that some physicists and astronomers strongly dispute the existence of extraterrestrial life. It's argued that NASA is creating a commission to investigate UFOs and their connection to extraterrestrial life in order to bring some scientific credibility to the debate, by using technology to detect biosignatures. Biosignatures are signatures that we pick up on when a far-away planet is altered by its biosphere - this would be a sign of life. Overall, this article sums up how perhaps the most scientifically credible agency will get involved in the scientific research into what UFOs could mean.
 
--   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+-   This research question builds on the research about UFO sightings worldwide, and looks at commonalities across sightings across time and place.
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-2
 
-# add code here
+ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
+
+glimpse(ufo_sightings)
 ```
 
 # Data 3
