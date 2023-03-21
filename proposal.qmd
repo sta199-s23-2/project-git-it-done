@@ -58,12 +58,11 @@ sd_covid <- South_Dakota_COVID19_Feature_Layer_1_
 
 ## Introduction and data
 
--   Identify the source of the data.
-The source of this data is data.gov. 
+-   Identify the source of the data. The source of this data is data.gov.
 
 -   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-It was found through the information reported by the South Dakota Department of Health through medical records. It is continually collected, but our set spans from March 17th, 2020 to March 3rd, 2023. 
+It was found through the information reported by the South Dakota Department of Health through medical records. It is continually collected, but our set spans from March 17th, 2020 to March 3rd, 2023.
 
 -   Write a brief description of the observations.
 
@@ -71,21 +70,21 @@ The data show COVID cases collected in South Dakota, including how many cases we
 
 ## Research question
 
- How did cases effect different demographics based on how many people were tested in South Dakota?
+How did cases effect different demographics based on how many people were tested in South Dakota?
 
-This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research. 
+This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research.
 
 How did cases effect different demographics based on how many people were tested in South Dakota?
 
-This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research. 
+This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research.
 
 -   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-This research topic will explore how the quatity of COVID testing effects different age and sex groups. We believe that COVID cases will effect older men the most, despite being the group with the least amount of aggregrate beliefs in COVID-19. 
+This research topic will explore how the quatity of COVID testing effects different age and sex groups. We believe that COVID cases will effect older men the most, despite being the group with the least amount of aggregrate beliefs in COVID-19.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-With the exception of the reported date, state name (which is all the same), and global ID, all of the variables are quantitative. 
+With the exception of the reported date, state name (which is all the same), and global ID, all of the variables are quantitative.
 
 ## Literature
 
@@ -95,11 +94,11 @@ Abate BB, Kassie AM, Kassaw MW, et alSex difference in coronavirus disease (COVI
 
 -   Provide a one paragraph summary about the article.
 
-This article discusses the discrepancies between male and female COVID case numbers. The article looks at a wide range of people within the United States and factors in solely confirmed testing. The study did not include any information on the number of tests that were negative, focusing only on confirmed cases. This is significant because rather than looking at the overall response to COVID cases (i.e. increased mental health effects or differing frequency in testing based on sex), the study focused solely on who contracted COVID. The article supported the claim that men experience COVID in higher numbers. 
+This article discusses the discrepancies between male and female COVID case numbers. The article looks at a wide range of people within the United States and factors in solely confirmed testing. The study did not include any information on the number of tests that were negative, focusing only on confirmed cases. This is significant because rather than looking at the overall response to COVID cases (i.e. increased mental health effects or differing frequency in testing based on sex), the study focused solely on who contracted COVID. The article supported the claim that men experience COVID in higher numbers.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
-Our research expands beyond this in two key ways, looking at the specific impact on a geographic region and understanding the role that age plays within the COVID contraction discrepancy. 
+Our research expands beyond this in two key ways, looking at the specific impact on a geographic region and understanding the role that age plays within the COVID contraction discrepancy.
 
 ## Glimpse of data
 
@@ -172,6 +171,6 @@ Our research builds on the research described in this article, because it is com
 
 Works Cited:
 
-Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). Sensory analysis of four cultivars of coffee (0RW1S34RfeSDcfkexd09rT2Coffea arabica1RW1S34RfeSDcfkexd09rT2 L.), grown at different altitudes in the San Martin region - Peru. Ciência Rural, 47(9). https://doi.org/10.1590/0103-8478cr20160882.
+Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). Sensory analysis of four cultivars of coffee (0RW1S34RfeSDcfkexd09rT2Coffea arabica1RW1S34RfeSDcfkexd09rT2 L.), grown at different altitudes in the San Martin region - Peru. Ciência Rural, 47(9). https://doi.org/10.1590/0103-8478cr20160882.
 
 \
