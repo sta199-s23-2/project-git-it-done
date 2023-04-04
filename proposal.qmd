@@ -8,6 +8,7 @@ editor: visual
 ```{r}
 #| label: load-pkgs
 #| message: false
+#| warning: false
 
 library(tidyverse)
 ```
@@ -42,8 +43,8 @@ This research question builds on the research about UFO sightings worldwide, and
 
 ```{r}
 #| label: load-data-1
-
-#| label: load-data-2
+#| message: false
+#| warning: false
 
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
 
@@ -104,6 +105,8 @@ Our research expands beyond this in two key ways, looking at the specific impact
 
 ```{r}
 #| label: load-data-2
+#| message: false
+#| warning: false
 
 glimpse(sd_covid)
 ```
@@ -140,6 +143,8 @@ The source of the data is from the CORGIS (Collection Of Really Great, Interesti
 
 ```{r}
 #| label: load-data-3
+#| message: false
+#| warning: false
 
 coffee <- read_csv("data/coffee.csv")
 glimpse(coffee)
