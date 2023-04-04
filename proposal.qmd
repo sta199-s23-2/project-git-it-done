@@ -163,6 +163,20 @@ Our research will investigate the relationship between the average altitude of f
 
 The variable "Location.Country" (country where the coffee is produced) is a categorical variable, whereas the variables "Data.Scores.Sweetness" (sweetness level of the coffee on a scale of 1-10) and "Location.Altitude.Average" (the average altitude of the farm in which the coffee was grown) are quantitative variables.
 
+Other variables to consider would be the minimum and maximum altitudes (and 
+the range between those two values) since our research question depends on the 
+average altitude. One could investigate the changes in sweetness between these
+maximum and minimum altitude values of specific locations to supplement the 
+research from our question about comparing countries. 
+
+One variable we want to control is the year, because climate/weather differences
+vary by year, so measuring sweetness would be best relegated to data from the 
+same year. 
+
+Another variable to control would be Data.Type.Processing method, because that
+process would alter the condition of the coffee after its growth and thus it
+could affect sweetness levels. 
+
 LITERATURE
 
 This research article discusses the research into the sensory information about four different types of coffee, and how these attributes compared when coffee was grown at two different altitudes in the San Martin region of Peru. There was a 200 meter difference in the altitudes of coffee being grown and an ample amount -- 1500g -- of each type of coffee was grown in each location. Sensory factors "such as aroma, taste, aftertaste, acidity, body, consistency, balance, cleanliness of the cup, sweetness and beverage quality" were measured based on tables approved by the Specialty Coffee Association of America (SCAA). Moreover, the coffee tasters used to assess the coffee for this experiment were "certified by the Cooperativa Agraria Cafetalera y de Servicios Oro Verde". 
