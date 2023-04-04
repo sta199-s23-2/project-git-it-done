@@ -7,7 +7,12 @@ editor: visual
 
 ```{r}
 #| label: load-pkgs
+<<<<<<< HEAD
 
+=======
+#| message: false
+#| warning: false
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 
 library(tidyverse)
 ```
@@ -16,16 +21,17 @@ library(tidyverse)
 
 ## Introduction and data
 
-The data set, ufo_sightings.csv, is from the CORGIS Dataset project.                            This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
+The data set, ufo_sightings.csv, is from the CORGIS Dataset project. This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
 
 The observations collect data about UFO sightings worldwide, from date and time to city area, date documented, and more specific information about the description of the UFO, from size to lights.
 
 ## Research question
+
 What is the most common location UFOs are sighted in? What is the most common size or shape of UFO? How can we analyze these reports to contribute to the dialogue about whether or not UFOs are evidence of alien life?
 
 This is a complicated research topic because there is a lot of debate among the general public about whether or not UFOs are indicators of alien life. I believe that we can use this data to determine if there are any continuities across the data that might point to how solid these UFO reports are (essentially, if they are corroborated). I do not believe there will be enough correlation across the data to support the existence of alien life.
 
-Several of the variables are categorical: date_time, city_area, state, country, ufo_shape,  described_encounter_length, description, and date_documented. The quantitative variables are encounter_length, latitude, and longitude.
+Several of the variables are categorical: date_time, city_area, state, country, ufo_shape, described_encounter_length, description, and date_documented. The quantitative variables are encounter_length, latitude, and longitude.
 
 ## Literature
 
@@ -35,8 +41,7 @@ Several of the variables are categorical: date_time, city_area, state, country, 
 Here is an article about how NASA will bring the scientific standard to the search for UFOs.
 >>>>>>> 0e60254fd73925511718d927f4c14d94c4f98d18
 
-https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/
-https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ 
+https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/
 
 This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial phenomena). The University of Rochester outlines that some physicists and astronomers strongly dispute the existence of extraterrestrial life. It's argued that NASA is creating a commission to investigate UFOs and their connection to extraterrestrial life in order to bring some scientific credibility to the debate, by using technology to detect biosignatures. Biosignatures are signatures that we pick up on when a far-away planet is altered by its biosphere - this would be a sign of life. Overall, this article sums up how perhaps the most scientifically credible agency will get involved in the scientific research into what UFOs could mean.
 
@@ -46,8 +51,8 @@ This research question builds on the research about UFO sightings worldwide, and
 
 ```{r}
 #| label: load-data-1
-
-#| label: load-data-2
+#| message: false
+#| warning: false
 
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
 
@@ -56,38 +61,90 @@ glimpse(ufo_sightings)
 
 # Data 2
 
+```{r}
+sd_covid <- South_Dakota_COVID19_Feature_Layer_1_
+```
+
 ## Introduction and data
 
+<<<<<<< HEAD
 -   The data set, ufo_sightings.csv, is from the CORGIS Dataset project.
+=======
+-   Identify the source of the data. The source of this data is data.gov.
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 
 -   This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
 
+<<<<<<< HEAD
 -   The observations collect data about UFO sightings worldwide, from date and time to city area, date documented, and more specific information about the description of the UFO, from size to lights.
+=======
+It was found through the information reported by the South Dakota Department of Health through medical records. It is continually collected, but our set spans from March 17th, 2020 to March 3rd, 2023.
+
+-   Write a brief description of the observations.
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+
+The data show COVID cases collected in South Dakota, including how many cases were confirmed and recovered on a given date. The data separates patients by age and sex. The only ethical concern in the false reporting of data by medical centers of the SDDOH, but there is no evidence to support this concern.
 
 ## Research question
 
+<<<<<<< HEAD
 -   What is the most common location UFOs are sighted in? What is the most common size or shape of UFO? How can we analyze these reports to contribute to the dialogue about whether or not UFOs are evidence of alien life?
+=======
+How did cases effect different demographics based on how many people were tested in South Dakota?
+
+This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research.
+
+How did cases effect different demographics based on how many people were tested in South Dakota?
+
+This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research.
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 
 -   This is a complicated research topic because there is a lot of debate among the general public about whether or not UFOs are indicators of alien life. I believe that we can use this data to determine if there are any continuities across the data that might point to how solid these UFO reports are (essentially, if they are corroborated). I do not believe there will be enough correlation across the data to support the existence of alien life.
 
+<<<<<<< HEAD
 -   Several of the variables are categorical: date_time, city_area, state, country, ufo_shape, described_encounter_length, description, and date_documented. The quantitative variables are encounter_length, latitude, and longitude.
+=======
+This research topic will explore how the quatity of COVID testing effects different age and sex groups. We believe that COVID cases will effect older men the most, despite being the group with the least amount of aggregrate beliefs in COVID-19.
+
+-   Identify the types of variables in your research question. Categorical? Quantitative?
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+
+With the exception of the reported date, state name (which is all the same), and global ID, all of the variables are quantitative.
 
 ## Literature
 
 -   https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ Here is an article about how NASA will bring the scientific standard to the search for UFOs.
 
+<<<<<<< HEAD
 -   This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial phenomena). The University of Rochester outlines that some physicists and astronomers strongly dispute the existence of extraterrestrial life. It's argued that NASA is creating a commission to investigate UFOs and their connection to extraterrestrial life in order to bring some scientific credibility to the debate, by using technology to detect biosignatures. Biosignatures are signatures that we pick up on when a far-away planet is altered by its biosphere - this would be a sign of life. Overall, this article sums up how perhaps the most scientifically credible agency will get involved in the scientific research into what UFOs could mean.
 
 -   This research question builds on the research about UFO sightings worldwide, and looks at commonalities across sightings across time and place.
+=======
+Abate BB, Kassie AM, Kassaw MW, et alSex difference in coronavirus disease (COVID-19): a systematic review and meta-analysisBMJ Open 2020;10:e040129. doi: 10.1136/bmjopen-2020-040129
+
+-   Provide a one paragraph summary about the article.
+
+This article discusses the discrepancies between male and female COVID case numbers. The article looks at a wide range of people within the United States and factors in solely confirmed testing. The study did not include any information on the number of tests that were negative, focusing only on confirmed cases. This is significant because rather than looking at the overall response to COVID cases (i.e. increased mental health effects or differing frequency in testing based on sex), the study focused solely on who contracted COVID. The article supported the claim that men experience COVID in higher numbers.
+
+-   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+
+Our research expands beyond this in two key ways, looking at the specific impact on a geographic region and understanding the role that age plays within the COVID contraction discrepancy.
 
 ## Glimpse of data
 
 ```{r}
 #| label: load-data-2
+#| message: false
+#| warning: false
 
+<<<<<<< HEAD
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
 
 glimpse(ufo_sightings)
+=======
+glimpse(sd_covid)
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 ```
 
 # Data 3
@@ -122,6 +179,8 @@ The source of the data is from the CORGIS (Collection Of Really Great, Interesti
 
 ```{r}
 #| label: load-data-3
+#| message: false
+#| warning: false
 
 coffee <- read_csv("data/coffee.csv")
 glimpse(coffee)
@@ -129,8 +188,7 @@ glimpse(coffee)
 
 INTRODUCTION AND DATA
 
-Date and Method of Original Data Collection: These data were collected from the Coffee Quality Institute's review pages in January 2018. These data contain 
-reviews of 1312 arabica and 28 robusta coffee beans from the Coffee Quality Institute's trained reviewers.
+Date and Method of Original Data Collection: These data were collected from the Coffee Quality Institute's review pages in January 2018. These data contain reviews of 1312 arabica and 28 robusta coffee beans from the Coffee Quality Institute's trained reviewers.
 
 Each observation is a review on a type of coffee.
 
@@ -138,41 +196,36 @@ There doesn't seem to be any evident ethical concerns.
 
 RESEARCH QUESTION
 
-What is the relationship between the average altitude of the farm and the 
-sweetness level of the coffee based on the country where the coffee was 
-produced?
+What is the relationship between the average altitude of the farm and the sweetness level of the coffee based on the country where the coffee was produced?
 
-This question is important because the results of this study will demonstrate 
-which country and at which altitude the coffee will be the sweetest or least 
-sweet. This information will be important for coffee farmers who wish to produce sweet coffee (or vice versa) for their customers.
+This question is important because the results of this study will demonstrate which country and at which altitude the coffee will be the sweetest or least sweet. This information will be important for coffee farmers who wish to produce sweet coffee (or vice versa) for their customers.
 
-Our research will investigate the relationship between the average altitude of 
-farm where the coffee is grown and the sweetness level of the coffee produced 
-based on the country where the coffee was produced. We hypothesize that there 
-will be a positive correlation between the altitude and sweetness, because the 
-literature showed that coffee beans grown at higher altitudes made coffee with
-a better taste. 
+Our research will investigate the relationship between the average altitude of farm where the coffee is grown and the sweetness level of the coffee produced based on the country where the coffee was produced. We hypothesize that there will be a positive correlation between the altitude and sweetness, because the literature showed that coffee beans grown at higher altitudes made coffee with a better taste.
 
-The variable "Location.Country" (country where the coffee is produced) is a categorical variable, whereas the variables "Data.Scores.Sweetness" (sweetness 
-level of the coffee on a scale of 1-10) and "Location.Altitude.Average"
-(the average altitude of the farm in which the coffee was grown) are 
-quantitative variables.
+The variable "Location.Country" (country where the coffee is produced) is a categorical variable, whereas the variables "Data.Scores.Sweetness" (sweetness level of the coffee on a scale of 1-10) and "Location.Altitude.Average" (the average altitude of the farm in which the coffee was grown) are quantitative variables.
+
+Other variables to consider would be the minimum and maximum altitudes (and 
+the range between those two values) since our research question depends on the 
+average altitude. One could investigate the changes in sweetness between these
+maximum and minimum altitude values of specific locations to supplement the 
+research from our question about comparing countries. 
+
+One variable we want to control is the year, because climate/weather differences
+vary by year, so measuring sweetness would be best relegated to data from the 
+same year. 
+
+Another variable to control would be Data.Type.Processing method, because that
+process would alter the condition of the coffee after its growth and thus it
+could affect sweetness levels. 
 
 LITERATURE
 
-This research article discusses the research into the sensory information about four different types of coffee, and how these attributes compared when coffee 
-was grown at two different altitudes in the San Martin region of Peru. There was 
-a 200 meter difference in the altitudes of coffee being grown and an ample 
-amount -- 1500g -- of each type of coffee was grown in each location. Sensory factors "such as aroma, taste, aftertaste, acidity, body, consistency, balance, cleanliness of the cup, sweetness and beverage quality" were measured based on tables approved by the Specialty Coffee Association of America (SCAA). Moreover, the coffee tasters used to assess the coffee for this experiment were "certified 
-by the Cooperativa Agraria Cafetalera y de Servicios Oro Verde". 
+This research article discusses the research into the sensory information about four different types of coffee, and how these attributes compared when coffee was grown at two different altitudes in the San Martin region of Peru. There was a 200 meter difference in the altitudes of coffee being grown and an ample amount -- 1500g -- of each type of coffee was grown in each location. Sensory factors "such as aroma, taste, aftertaste, acidity, body, consistency, balance, cleanliness of the cup, sweetness and beverage quality" were measured based on tables approved by the Specialty Coffee Association of America (SCAA). Moreover, the coffee tasters used to assess the coffee for this experiment were "certified by the Cooperativa Agraria Cafetalera y de Servicios Oro Verde". 
 
 Our research builds on the research described in this article, because it is comparing sweetness (a sensory attribute) of coffee harvested at different altitudes in a variety of regions worldwide, not just the San Martin region of Peru.
 
 Works Cited:
 
-Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). 
-Sensory analysis of four cultivars of coffee (0RW1S34RfeSDcfkexd09rT2Coffea arabica1RW1S34RfeSDcfkexd09rT2 L.), grown at different altitudes in the San 
-Martin region - Peru. Ciência Rural, 47(9). https://doi.org/10.1590/0103-8478cr20160882. 
-
+Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). Sensory analysis of four cultivars of coffee (0RW1S34RfeSDcfkexd09rT2Coffea arabica1RW1S34RfeSDcfkexd09rT2 L.), grown at different altitudes in the San Martin region - Peru. Ciência Rural, 47(9). https://doi.org/10.1590/0103-8478cr20160882.
 
 \
