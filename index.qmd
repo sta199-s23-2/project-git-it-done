@@ -1,8 +1,10 @@
 ---
-title: "TEAM NAME"
+title: "TEAM 1 GIT IT DONE"
 subtitle: "STA 199 Project"
 format: html
 editor: visual
 ---
 
-Add project abstract here.
+
+
+
