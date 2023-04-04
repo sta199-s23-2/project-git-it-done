@@ -5,18 +5,20 @@ format: html
 editor: visual
 ---
 
+<<<<<<< HEAD
+=======
 ```{r}
 #| label: load-pkgs
-<<<<<<< HEAD
 
-=======
+
+
 #| message: false
 #| warning: false
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+
 
 library(tidyverse)
 ```
-
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 # Data 1
 
 ## Introduction and data
@@ -62,7 +64,14 @@ glimpse(ufo_sightings)
 # Data 2
 
 ```{r}
-sd_covid <- South_Dakota_COVID19_Feature_Layer_1_
+#|label: south-dakota-covid
+
+library(readxl)
+
+South_Dakota_COVID19_Feature_Layer_1_ <- read_excel("data/South_Dakota_COVID19_Feature_Layer (1).xlsx")
+
+
+
 ```
 
 ## Introduction and data
@@ -89,6 +98,8 @@ The data show COVID cases collected in South Dakota, including how many cases we
 
 <<<<<<< HEAD
 -   What is the most common location UFOs are sighted in? What is the most common size or shape of UFO? How can we analyze these reports to contribute to the dialogue about whether or not UFOs are evidence of alien life?
+
+UPDATED RESEARCH QUESTION: What is the most common shape and size of UFO based on what continent it is sighted on? How can this data be analyzed to consider whether or not UFOs are real and evidence of alien life?
 =======
 How did cases effect different demographics based on how many people were tested in South Dakota?
 
@@ -133,20 +144,22 @@ Our research expands beyond this in two key ways, looking at the specific impact
 
 ## Glimpse of data
 
+<<<<<<< HEAD
 ```{r}
 #| label: load-data-2
 #| message: false
 #| warning: false
 
-<<<<<<< HEAD
+
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
 
 glimpse(ufo_sightings)
-=======
-glimpse(sd_covid)
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
-```
 
+
+
+```
+=======
+>>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 # Data 3
 
 ## Introduction and data
