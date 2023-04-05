@@ -7,4 +7,6 @@ execute:
   echo: true
 ---
 
-Add project writeup here.
+# Introduction and Data
+
+Our topic is UFO sightings.
