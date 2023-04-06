@@ -29,11 +29,20 @@ ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascie
 
 glimpse(ufo_sightings)
 
-ufo_sightings |>
+mean_ufo <- ufo_sightings |>
+  drop_na(country, encounter_length) |>
+  group_by(ufo_shape) |>
+  summarize(mean_time = mean(encounter_length)) |>
+  
+  
+  
+mean_ufo |>
 ggplot(
-aes(x = ufo_shape)
+aes(x = mean_time, fill = country)
 ) +
-geom_bar()
+geom_bar() +
+labs(x = "UFO Shape", title = "UFO Shape and Length in the US")
+ theme(axis.text.x = element_text(angle=90, vjust=.4, hjust=1))
 
 
 
