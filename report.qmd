@@ -45,7 +45,7 @@ ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascie
 ```{r}
 mean_ufo <- ufo_sightings |>
   drop_na(country, encounter_length) |>
-  group_by(ufo_shape) |>
+  group_by(ufo_shape, country) |>
   summarize(mean_time = mean(encounter_length))
 
 new_ufo <- left_join(mean_ufo, ufo_sightings)
@@ -54,8 +54,8 @@ new_ufo |>
   ggplot(
     aes(x = ufo_shape, y = mean_time, color = country)
   ) +
-  geom_point() +
   geom_line() +
+  geom_point() +
   labs(x = "UFO Shape", y = "Average Length of Ecounter (Seconds)", title = "UFO Encounter Length by Shape and Country") +
   theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1))
 
@@ -68,3 +68,4 @@ new_ufo |>
   theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1))
 ```
 
+To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn't overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question. 
