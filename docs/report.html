@@ -188,101 +188,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<pre><code>
-## Introduction and Data
+<pre><code>## Introduction and Data
 
-Our topic is UFO sightings.
-
-## Methodology
-::: {.cell}
-
-```{.r .cell-code}
-ufo_sightings &lt;- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")</code></pre>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 80332 Columns: 11
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (8): date_time, city_area, state, country, ufo_shape, described_encounte...
-dbl (3): encounter_length, latitude, longitude
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ufo_sightings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 80,332
-Columns: 11
-$ date_time                  &lt;chr&gt; "10/10/1949 20:30", "10/10/1949 21:00", "10…
-$ city_area                  &lt;chr&gt; "san marcos", "lackland afb", "chester (uk/…
-$ state                      &lt;chr&gt; "tx", "tx", NA, "tx", "hi", "tn", NA, "ct",…
-$ country                    &lt;chr&gt; "us", NA, "gb", "us", "us", "us", "gb", "us…
-$ ufo_shape                  &lt;chr&gt; "cylinder", "light", "circle", "circle", "l…
-$ encounter_length           &lt;dbl&gt; 2700, 7200, 20, 20, 900, 300, 180, 1200, 18…
-$ described_encounter_length &lt;chr&gt; "45 minutes", "1-2 hrs", "20 seconds", "1/2…
-$ description                &lt;chr&gt; "This event took place in early fall around…
-$ date_documented            &lt;chr&gt; "4/27/2004", "12/16/2005", "1/21/2008", "1/…
-$ latitude                   &lt;dbl&gt; 29.88306, 29.38421, 53.20000, 28.97833, 21.…
-$ longitude                  &lt;dbl&gt; -97.941111, -98.581082, -2.916667, -96.6458…</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"de"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(country) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 105 × 11
-   date_…¹ city_…² state country ufo_s…³ encou…⁴ descr…⁵ descr…⁶ date_…⁷ latit…⁸
-   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;
- 1 10/13/… berlin… &lt;NA&gt;  de      fireba…     120 1-2 mi… 7 shoo… 10/30/…    52.5
- 2 10/20/… berlin… &lt;NA&gt;  de      unknown    1500 25 min… Ovni a… 10/30/…    52.5
- 3 10/8/2… obernh… &lt;NA&gt;  de      triang…       2 seconds UFO ap… 11/19/…    49.4
- 4 1/10/2… otters… &lt;NA&gt;  de      triang…     240 4 minu… Triang… 1/31/2…    53.1
- 5 11/15/… bremen… &lt;NA&gt;  de      unknown      30 30 sec  One ob… 8/5/20…    50.7
- 6 11/15/… sembac… &lt;NA&gt;  de      egg         120 2 minu… An und… 5/15/2…    49.5
- 7 11/18/… magdeb… &lt;NA&gt;  de      other         4 4 sec   Ich sa… 11/20/…    52.2
- 8 1/1/20… neurup… &lt;NA&gt;  de      fireba…     900 15min   A red … 1/10/2…    52.9
- 9 1/1/20… lamper… &lt;NA&gt;  de      fireba…    1560 26 min… Severa… 1/10/2…    49.6
-10 1/1/20… ramste… &lt;NA&gt;  de      light      7200 2 hrs   Orange… 1/10/2…    49.4
-# … with 95 more rows, 1 more variable: longitude &lt;dbl&gt;, and abbreviated
-#   variable names ¹​date_time, ²​city_area, ³​ufo_shape, ⁴​encounter_length,
-#   ⁵​described_encounter_length, ⁶​description, ⁷​date_documented, ⁸​latitude</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(country <span class="sc">!=</span> <span class="st">"us"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">aes</span>(<span class="at">x =</span> ufo_shape, <span class="at">fill =</span> encounter_length)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"UFO Shape"</span>, <span class="at">title =</span> <span class="st">"UFO Shape and Length in the US"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The following aesthetics were dropped during statistical transformation: fill
-ℹ This can happen when ggplot fails to infer the correct grouping structure in
-  the data.
-ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
-  variable into a factor?</code></pre>
-</div>
-<div class="cell-output-display">
-<p><img src="report_files/figure-html/methodology-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">90</span>, <span class="at">vjust=</span>.<span class="dv">4</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>List of 1
- $ axis.text.x:List of 11
-  ..$ family       : NULL
-  ..$ face         : NULL
-  ..$ colour       : NULL
-  ..$ size         : NULL
-  ..$ hjust        : num 1
-  ..$ vjust        : num 0.4
-  ..$ angle        : num 90
-  ..$ lineheight   : NULL
-  ..$ margin       : NULL
-  ..$ debug        : NULL
-  ..$ inherit.blank: logi FALSE
-  ..- attr(*, "class")= chr [1:2] "element_text" "element"
- - attr(*, "class")= chr [1:2] "theme" "gg"
- - attr(*, "complete")= logi FALSE
- - attr(*, "validate")= logi TRUE</code></pre>
-</div>
-<p>:::</p>
+Our topic is UFO sightings.</code></pre>
+<p>Our topic for this project is UFOs, or “Unidentified Flying Objects”. UFOs as proof of alien life are largely writen off as pseudoscience by the scientific community, but this does not take away from the fact that there are tens of thousands of sightings reported annually. In 2020, the Pentagon released videos of unidentified flying objects, sparking the intrigue of enthusiasts and skeptics alike. This is outlined in a New York Times article that also highlights how the government has been looking into unidentified aerial phenomena (UAF; another term for UFO) since the 1950s; articles like these add merit to our research into consistencies in examining UFOs worldwide. Links to NYT article: https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html</p>
+<pre><code>## Methodology
+```f3175f2a-e8a0-4436-be12-b33925b6d220
+31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AFoAZwBBAHoAQQBEAEUAQQBOAHcAQQAxAEEARwBZAEEATQBnAEIAaABBAEMAMABBAFoAUQBBADQAQQBHAEUAQQBNAEEAQQB0AEEARABRAEEATgBBAEEAegBBAEQAWQBBAEwAUQBCAGkAQQBHAFUAQQBNAFEAQQB5AEEAQwAwAEEAWQBnAEEAegBBAEQATQBBAE8AUQBBAHkAQQBEAFUAQQBZAGcAQQAyAEEARwBRAEEATQBnAEEAeQBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATQBnAEEANABBAEQASQBBAAoAcAByAGUAZgBpAHgAOgAKAHMAbwB1AHIAYwBlADoAWQBBAEIAZwBBAEcAQQBBAGUAdwBCAHkAQQBIADAAQQBDAGcAQQBqAEEASAB3AEEASQBBAEIAcwBBAEcARQBBAFkAZwBCAGwAQQBHAHcAQQBPAGcAQQBnAEEARwAwAEEAWgBRAEIAMABBAEcAZwBBAGIAdwBCAGsAQQBHADgAQQBiAEEAQgB2AEEARwBjAEEAZQBRAEEASwBBAEEAbwBBAGQAUQBCAG0AQQBHADgAQQBYAHcAQgB6AEEARwBrAEEAWgB3AEIAbwBBAEgAUQBBAGEAUQBCAHUAQQBHAGMAQQBjAHcAQQBnAEEARAB3AEEATABRAEEAZwBBAEgASQBBAFoAUQBCAGgAQQBHAFEAQQBjAGcAQQA2AEEARABvAEEAYwBnAEIAbABBAEcARQBBAFoAQQBCAGYAQQBHAE0AQQBjAHcAQgAyAEEAQwBnAEEASQBnAEIAbwBBAEgAUQBBAGQAQQBCAHcAQQBIAE0AQQBPAGcAQQB2AEEAQwA4AEEAYwBnAEIAaABBAEgAYwBBAEwAZwBCAG4AQQBHAGsAQQBkAEEAQgBvAEEASABVAEEAWQBnAEIAMQBBAEgATQBBAFoAUQBCAHkAQQBHAE0AQQBiAHcAQgB1AEEASABRAEEAWgBRAEIAdQBBAEgAUQBBAEwAZwBCAGoAQQBHADgAQQBiAFEAQQB2AEEASABJAEEAWgBnAEIAdgBBAEgASQBBAFoAQQBCAGgAQQBIAFEAQQBZAFEAQgB6AEEARwBNAEEAYQBRAEIAbABBAEcANABBAFkAdwBCAGwAQQBDADgAQQBkAEEAQgBwAEEARwBRAEEAZQBRAEIAMABBAEgAVQBBAFoAUQBCAHoAQQBHAFEAQQBZAFEAQgA1AEEAQwA4AEEAYgBRAEIAaABBAEgATQBBAGQAQQBCAGwAQQBIAEkAQQBMAHcAQgBrAEEARwBFAEEAZABBAEIAaABBAEMAOABBAE0AZwBBAHcAQQBEAEUAQQBPAFEAQQB2AEEARABJAEEATQBBAEEAeABBAEQAawBBAEwAUQBBAHcAQQBEAFkAQQBMAFEAQQB5AEEARABVAEEATAB3AEIAMQBBAEcAWQBBAGIAdwBCAGYAQQBIAE0AQQBhAFEAQgBuAEEARwBnAEEAZABBAEIAcABBAEcANABBAFoAdwBCAHoAQQBDADQAQQBZAHcAQgB6AEEASABZAEEASQBnAEEAcABBAEEAbwBBAEMAZwBCAG4AQQBHAHcAQQBhAFEAQgB0AEEASABBAEEAYwB3AEIAbABBAEMAZwBBAGQAUQBCAG0AQQBHADgAQQBYAHcAQgB6AEEARwBrAEEAWgB3AEIAbwBBAEgAUQBBAGEAUQBCAHUAQQBHAGMAQQBjAHcAQQBwAEEAQQBvAEEAQwBnAEIAMQBBAEcAWQBBAGIAdwBCAGYAQQBIAE0AQQBhAFEAQgBuAEEARwBnAEEAZABBAEIAcABBAEcANABBAFoAdwBCAHoAQQBDAEEAQQBmAEEAQQArAEEAQQBvAEEASQBBAEEAZwBBAEcAUQBBAGMAZwBCAHYAQQBIAEEAQQBYAHcAQgB1AEEARwBFAEEASwBBAEIAagBBAEcAOABBAGQAUQBCAHUAQQBIAFEAQQBjAGcAQgA1AEEAQwB3AEEASQBBAEIAbABBAEcANABBAFkAdwBCAHYAQQBIAFUAQQBiAGcAQgAwAEEARwBVAEEAYwBnAEIAZgBBAEcAdwBBAFoAUQBCAHUAQQBHAGMAQQBkAEEAQgBvAEEAQwBrAEEASQBBAEIAOABBAEQANABBAEMAZwBBAGcAQQBDAEEAQQBaAHcAQgB5AEEARwA4AEEAZABRAEIAdwBBAEYAOABBAFkAZwBCADUAQQBDAGcAQQBkAFEAQgBtAEEARwA4AEEAWAB3AEIAegBBAEcAZwBBAFkAUQBCAHcAQQBHAFUAQQBLAFEAQQBnAEEASAB3AEEAUABnAEEASwBBAEMAQQBBAEkAQQBCAHoAQQBIAFUAQQBiAFEAQgB0AEEARwBFAEEAYwBnAEIAcABBAEgAbwBBAFoAUQBBAG8AQQBHADAAQQBaAFEAQgBoAEEARwA0AEEAWAB3AEIAMABBAEcAawBBAGIAUQBCAGwAQQBDAEEAQQBQAFEAQQBnAEEARwAwAEEAWgBRAEIAaABBAEcANABBAEsAQQBCAGwAQQBHADQAQQBZAHcAQgB2AEEASABVAEEAYgBnAEIAMABBAEcAVQBBAGMAZwBCAGYAQQBHAHcAQQBaAFEAQgB1AEEARwBjAEEAZABBAEIAbwBBAEMAawBBAEsAUQBBAGcAQQBBAG8AQQBDAGcAQgAxAEEARwBZAEEAYgB3AEIAZgBBAEgATQBBAGEAUQBCAG4AQQBHAGcAQQBkAEEAQgBwAEEARwA0AEEAWgB3AEIAegBBAEMAQQBBAGYAQQBBACsAQQBBAG8AQQBJAEEAQQBnAEEARwBjAEEAWgB3AEIAdwBBAEcAdwBBAGIAdwBCADAAQQBDAGcAQQBDAGcAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEcARQBBAFoAUQBCAHoAQQBDAGcAQQBlAEEAQQBnAEEARAAwAEEASQBBAEIAMQBBAEcAWQBBAGIAdwBCAGYAQQBIAE0AQQBhAEEAQgBoAEEASABBAEEAWgBRAEEAcwBBAEMAQQBBAGUAUQBBAGcAQQBEADAAQQBJAEEAQgB0AEEARwBVAEEAWQBRAEIAdQBBAEYAOABBAGQAQQBCAHAAQQBHADAAQQBaAFEAQQBwAEEAQQBvAEEASQBBAEEAZwBBAEMAawBBAEkAQQBBAHIAQQBBAG8AQQBJAEEAQQBnAEEARwBjAEEAWgBRAEIAdgBBAEcAMABBAFgAdwBCAGoAQQBHADgAQQBiAEEAQQBvAEEAQwBrAEEASQBBAEEAcgBBAEEAbwBBAEkAQQBBAGcAQQBHAFkAQQBZAFEAQgBqAEEARwBVAEEAZABBAEIAZgBBAEgAYwBBAGMAZwBCAGgAQQBIAEEAQQBLAEEAQgArAEEARwBNAEEAYgB3AEIAMQBBAEcANABBAGQAQQBCAHkAQQBIAGsAQQBLAFEAQQByAEEAQQBvAEEASQBBAEEAZwBBAEcAdwBBAFkAUQBCAGkAQQBIAE0AQQBLAEEAQgA0AEEAQwBBAEEAUABRAEEAZwBBAEMASQBBAFYAUQBCAEcAQQBFADgAQQBJAEEAQgBUAEEARwBnAEEAWQBRAEIAdwBBAEcAVQBBAEkAZwBBAHMAQQBDAEEAQQBkAEEAQgBwAEEASABRAEEAYgBBAEIAbABBAEMAQQBBAFAAUQBBAGcAQQBDAEkAQQBWAFEAQgBHAEEARQA4AEEASQBBAEIAVABBAEcAZwBBAFkAUQBCAHcAQQBHAFUAQQBJAEEAQgBoAEEARwA0AEEAWgBBAEEAZwBBAEUAdwBBAFoAUQBCAHUAQQBHAGMAQQBkAEEAQgBvAEEAQwBBAEEAYQBRAEIAdQBBAEMAQQBBAGQAQQBCAG8AQQBHAFUAQQBJAEEAQgBWAEEARgBNAEEASQBnAEEAcABBAEMAQQBBAEsAdwBBAEsAQQBDAEEAQQBJAEEAQgAwAEEARwBnAEEAWgBRAEIAdABBAEcAVQBBAEsAQQBCAGgAQQBIAGcAQQBhAFEAQgB6AEEAQwA0AEEAZABBAEIAbABBAEgAZwBBAGQAQQBBAHUAQQBIAGcAQQBJAEEAQQA5AEEAQwBBAEEAWgBRAEIAcwBBAEcAVQBBAGIAUQBCAGwAQQBHADQAQQBkAEEAQgBmAEEASABRAEEAWgBRAEIANABBAEgAUQBBAEsAQQBCAGgAQQBHADQAQQBaAHcAQgBzAEEARwBVAEEASQBBAEEAOQBBAEMAQQBBAE8AUQBBAHcAQQBDAHcAQQBJAEEAQgAyAEEARwBvAEEAZABRAEIAegBBAEgAUQBBAEkAQQBBADkAQQBDAEEAQQBMAGcAQQAwAEEAQwB3AEEASQBBAEIAbwBBAEcAbwBBAGQAUQBCAHoAQQBIAFEAQQBJAEEAQQA5AEEAQwBBAEEATQBRAEEAcABBAEMAawBBAEMAZwBCAGcAQQBHAEEAQQBZAEEAQQA9AAoAcwB1AGYAZgBpAHgAOgA=:31b8e172-b470-440e-83d8-e6b185028602</code></pre>
 
 
 
