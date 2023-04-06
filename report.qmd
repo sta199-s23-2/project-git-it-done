@@ -13,7 +13,6 @@ execute:
 
 library(tidyverse)
 library(tidymodels)
-
 ```
 ```
 
@@ -29,24 +28,17 @@ ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascie
 
 glimpse(ufo_sightings)
 
-mean_ufo <- ufo_sightings |>
+ufo_sightings |>
   drop_na(country, encounter_length) |>
   group_by(ufo_shape) |>
-  summarize(mean_time = mean(encounter_length)) |>
-  
-  
-  
-mean_ufo |>
-ggplot(
-aes(x = mean_time, fill = country)
-) +
-geom_bar() +
-labs(x = "UFO Shape", title = "UFO Shape and Length in the US")
- theme(axis.text.x = element_text(angle=90, vjust=.4, hjust=1))
+  summarize(mean_time = mean(encounter_length)) 
 
-
-
+ufo_sightings |>
+  ggplot(
+    aes(x = ufo_shape, y = mean_time)
+  ) +
+  geom_col() +
+  facet_wrap(~country)+
+  labs(x = "UFO Shape", title = "UFO Shape and Length in the US") +
+  theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1))
 ```
-
-
-

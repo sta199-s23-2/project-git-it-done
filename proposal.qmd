@@ -69,9 +69,6 @@ glimpse(ufo_sightings)
 library(readxl)
 
 South_Dakota_COVID19_Feature_Layer_1_ <- read_excel("data/South_Dakota_COVID19_Feature_Layer (1).xlsx")
-
-
-
 ```
 
 ## Introduction and data
@@ -154,9 +151,6 @@ Our research expands beyond this in two key ways, looking at the specific impact
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
 
 glimpse(ufo_sightings)
-
-
-
 ```
 =======
 >>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
