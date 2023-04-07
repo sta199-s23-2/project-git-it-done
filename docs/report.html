@@ -162,7 +162,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link active" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -191,16 +198,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## Introduction and Data
 
 Our topic is UFO sightings.</code></pre>
-<p>Our topic for this project is UFOs, or “Unidentified Flying Objects”. UFOs as proof of alien life are largely writen off as pseudoscience by the scientific community, but this does not take away from the fact that there are tens of thousands of sightings reported annually. In 2020, the Pentagon released videos of unidentified flying objects, sparking the intrigue of enthusiasts and skeptics alike. This is outlined in a New York Times article that also highlights how the government has been looking into unidentified aerial phenomena (UAF; another term for UFO) since the 1950s; articles like these add merit to our research into consistencies in examining UFOs worldwide. Links to NYT article: https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html</p>
+<p>Our topic for this project is UFOs, or “Unidentified Flying Objects”. UFOs as proof of alien life are largely written off as pseudoscience by the scientific community, but this does not take away from the fact that there are tens of thousands of sightings reported annually. In 2020, the Pentagon released videos of unidentified flying objects, sparking the intrigue of enthusiasts and skeptics alike. This is outlined in a New York Times article that also highlights how the government has been looking into unidentified aerial phenomena (UAF; another term for UFO) since the 1950s; articles like these add merit to our research into consistencies in examining UFOs worldwide. Links to NYT article: https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html</p>
 <p>The research question we have landed on is the following: What is the relationship between the UFO shape and the length of the encounter time (in seconds) based on the country in which the UFO sighting was reported? Our hope is that this will help examine consistencies and contradictory data when investigating UFO reports worldwide.</p>
 <p>Ethical issues do not seem to exist with this data, because we do not have any personal information about the sources of the data. All of the data is anonymous and has no identifying information which eliminates ethical concerns.</p>
 <p>The data was uploaded by a man named Sam Arnold to Github on October 28, 2022. It originally came from the National UFO Reporting Center (https://nuforc.org/), and was tidied by a Github user named Sigmond Axel, originally in 2014 (https://github.com/planetsig/ufo-reports). According to the link on Github, this data was initially uploaded as a part of a Tidy Tuesday project. The cases are over 80,000 UFO sightings worldwide.</p>
 <p>There are three relevant variables we’re examining from the data set: length of encounter, shape, and country. Data.Encounter duration is measured in seconds and is classified as a “double” variable. Data.shape is also a character variable, and options for this category include “disk”. Finally, the Location.country variable reports what country the particular UFO was sighted in.</p>
-<pre><code>## Methodology
-```f3175f2a-e8a0-4436-be12-b33925b6d220
-31b8e172-b470-440e-83d8-e6b185028602:dAB5AHAAZQA6AFoAZwBBAHoAQQBEAEUAQQBOAHcAQQAxAEEARwBZAEEATQBnAEIAaABBAEMAMABBAFoAUQBBADQAQQBHAEUAQQBNAEEAQQB0AEEARABRAEEATgBBAEEAegBBAEQAWQBBAEwAUQBCAGkAQQBHAFUAQQBNAFEAQQB5AEEAQwAwAEEAWQBnAEEAegBBAEQATQBBAE8AUQBBAHkAQQBEAFUAQQBZAGcAQQAyAEEARwBRAEEATQBnAEEAeQBBAEQAQQBBAAoAcABvAHMAaQB0AGkAbwBuADoATQBnAEEANABBAEQASQBBAAoAcAByAGUAZgBpAHgAOgAKAHMAbwB1AHIAYwBlADoAWQBBAEIAZwBBAEcAQQBBAGUAdwBCAHkAQQBIADAAQQBDAGcAQQBqAEEASAB3AEEASQBBAEIAcwBBAEcARQBBAFkAZwBCAGwAQQBHAHcAQQBPAGcAQQBnAEEARwAwAEEAWgBRAEIAMABBAEcAZwBBAGIAdwBCAGsAQQBHADgAQQBiAEEAQgB2AEEARwBjAEEAZQBRAEEASwBBAEEAbwBBAGQAUQBCAG0AQQBHADgAQQBYAHcAQgB6AEEARwBrAEEAWgB3AEIAbwBBAEgAUQBBAGEAUQBCAHUAQQBHAGMAQQBjAHcAQQBnAEEARAB3AEEATABRAEEAZwBBAEgASQBBAFoAUQBCAGgAQQBHAFEAQQBjAGcAQQA2AEEARABvAEEAYwBnAEIAbABBAEcARQBBAFoAQQBCAGYAQQBHAE0AQQBjAHcAQgAyAEEAQwBnAEEASQBnAEIAbwBBAEgAUQBBAGQAQQBCAHcAQQBIAE0AQQBPAGcAQQB2AEEAQwA4AEEAYwBnAEIAaABBAEgAYwBBAEwAZwBCAG4AQQBHAGsAQQBkAEEAQgBvAEEASABVAEEAWQBnAEIAMQBBAEgATQBBAFoAUQBCAHkAQQBHAE0AQQBiAHcAQgB1AEEASABRAEEAWgBRAEIAdQBBAEgAUQBBAEwAZwBCAGoAQQBHADgAQQBiAFEAQQB2AEEASABJAEEAWgBnAEIAdgBBAEgASQBBAFoAQQBCAGgAQQBIAFEAQQBZAFEAQgB6AEEARwBNAEEAYQBRAEIAbABBAEcANABBAFkAdwBCAGwAQQBDADgAQQBkAEEAQgBwAEEARwBRAEEAZQBRAEIAMABBAEgAVQBBAFoAUQBCAHoAQQBHAFEAQQBZAFEAQgA1AEEAQwA4AEEAYgBRAEIAaABBAEgATQBBAGQAQQBCAGwAQQBIAEkAQQBMAHcAQgBrAEEARwBFAEEAZABBAEIAaABBAEMAOABBAE0AZwBBAHcAQQBEAEUAQQBPAFEAQQB2AEEARABJAEEATQBBAEEAeABBAEQAawBBAEwAUQBBAHcAQQBEAFkAQQBMAFEAQQB5AEEARABVAEEATAB3AEIAMQBBAEcAWQBBAGIAdwBCAGYAQQBIAE0AQQBhAFEAQgBuAEEARwBnAEEAZABBAEIAcABBAEcANABBAFoAdwBCAHoAQQBDADQAQQBZAHcAQgB6AEEASABZAEEASQBnAEEAcABBAEEAbwBBAEMAZwBCAG4AQQBHAHcAQQBhAFEAQgB0AEEASABBAEEAYwB3AEIAbABBAEMAZwBBAGQAUQBCAG0AQQBHADgAQQBYAHcAQgB6AEEARwBrAEEAWgB3AEIAbwBBAEgAUQBBAGEAUQBCAHUAQQBHAGMAQQBjAHcAQQBwAEEAQQBvAEEAQwBnAEIAMQBBAEcAWQBBAGIAdwBCAGYAQQBIAE0AQQBhAFEAQgBuAEEARwBnAEEAZABBAEIAcABBAEcANABBAFoAdwBCAHoAQQBDAEEAQQBmAEEAQQArAEEAQQBvAEEASQBBAEEAZwBBAEcAUQBBAGMAZwBCAHYAQQBIAEEAQQBYAHcAQgB1AEEARwBFAEEASwBBAEIAagBBAEcAOABBAGQAUQBCAHUAQQBIAFEAQQBjAGcAQgA1AEEAQwB3AEEASQBBAEIAbABBAEcANABBAFkAdwBCAHYAQQBIAFUAQQBiAGcAQgAwAEEARwBVAEEAYwBnAEIAZgBBAEcAdwBBAFoAUQBCAHUAQQBHAGMAQQBkAEEAQgBvAEEAQwBrAEEASQBBAEIAOABBAEQANABBAEMAZwBBAGcAQQBDAEEAQQBaAHcAQgB5AEEARwA4AEEAZABRAEIAdwBBAEYAOABBAFkAZwBCADUAQQBDAGcAQQBkAFEAQgBtAEEARwA4AEEAWAB3AEIAegBBAEcAZwBBAFkAUQBCAHcAQQBHAFUAQQBLAFEAQQBnAEEASAB3AEEAUABnAEEASwBBAEMAQQBBAEkAQQBCAHoAQQBIAFUAQQBiAFEAQgB0AEEARwBFAEEAYwBnAEIAcABBAEgAbwBBAFoAUQBBAG8AQQBHADAAQQBaAFEAQgBoAEEARwA0AEEAWAB3AEIAMABBAEcAawBBAGIAUQBCAGwAQQBDAEEAQQBQAFEAQQBnAEEARwAwAEEAWgBRAEIAaABBAEcANABBAEsAQQBCAGwAQQBHADQAQQBZAHcAQgB2AEEASABVAEEAYgBnAEIAMABBAEcAVQBBAGMAZwBCAGYAQQBHAHcAQQBaAFEAQgB1AEEARwBjAEEAZABBAEIAbwBBAEMAawBBAEsAUQBBAGcAQQBBAG8AQQBDAGcAQgAxAEEARwBZAEEAYgB3AEIAZgBBAEgATQBBAGEAUQBCAG4AQQBHAGcAQQBkAEEAQgBwAEEARwA0AEEAWgB3AEIAegBBAEMAQQBBAGYAQQBBACsAQQBBAG8AQQBJAEEAQQBnAEEARwBjAEEAWgB3AEIAdwBBAEcAdwBBAGIAdwBCADAAQQBDAGcAQQBDAGcAQQBnAEEAQwBBAEEASQBBAEEAZwBBAEcARQBBAFoAUQBCAHoAQQBDAGcAQQBlAEEAQQBnAEEARAAwAEEASQBBAEIAMQBBAEcAWQBBAGIAdwBCAGYAQQBIAE0AQQBhAEEAQgBoAEEASABBAEEAWgBRAEEAcwBBAEMAQQBBAGUAUQBBAGcAQQBEADAAQQBJAEEAQgB0AEEARwBVAEEAWQBRAEIAdQBBAEYAOABBAGQAQQBCAHAAQQBHADAAQQBaAFEAQQBwAEEAQQBvAEEASQBBAEEAZwBBAEMAawBBAEkAQQBBAHIAQQBBAG8AQQBJAEEAQQBnAEEARwBjAEEAWgBRAEIAdgBBAEcAMABBAFgAdwBCAGoAQQBHADgAQQBiAEEAQQBvAEEAQwBrAEEASQBBAEEAcgBBAEEAbwBBAEkAQQBBAGcAQQBHAFkAQQBZAFEAQgBqAEEARwBVAEEAZABBAEIAZgBBAEgAYwBBAGMAZwBCAGgAQQBIAEEAQQBLAEEAQgArAEEARwBNAEEAYgB3AEIAMQBBAEcANABBAGQAQQBCAHkAQQBIAGsAQQBLAFEAQQByAEEAQQBvAEEASQBBAEEAZwBBAEcAdwBBAFkAUQBCAGkAQQBIAE0AQQBLAEEAQgA0AEEAQwBBAEEAUABRAEEAZwBBAEMASQBBAFYAUQBCAEcAQQBFADgAQQBJAEEAQgBUAEEARwBnAEEAWQBRAEIAdwBBAEcAVQBBAEkAZwBBAHMAQQBDAEEAQQBkAEEAQgBwAEEASABRAEEAYgBBAEIAbABBAEMAQQBBAFAAUQBBAGcAQQBDAEkAQQBWAFEAQgBHAEEARQA4AEEASQBBAEIAVABBAEcAZwBBAFkAUQBCAHcAQQBHAFUAQQBJAEEAQgBoAEEARwA0AEEAWgBBAEEAZwBBAEUAdwBBAFoAUQBCAHUAQQBHAGMAQQBkAEEAQgBvAEEAQwBBAEEAYQBRAEIAdQBBAEMAQQBBAGQAQQBCAG8AQQBHAFUAQQBJAEEAQgBWAEEARgBNAEEASQBnAEEAcABBAEMAQQBBAEsAdwBBAEsAQQBDAEEAQQBJAEEAQgAwAEEARwBnAEEAWgBRAEIAdABBAEcAVQBBAEsAQQBCAGgAQQBIAGcAQQBhAFEAQgB6AEEAQwA0AEEAZABBAEIAbABBAEgAZwBBAGQAQQBBAHUAQQBIAGcAQQBJAEEAQQA5AEEAQwBBAEEAWgBRAEIAcwBBAEcAVQBBAGIAUQBCAGwAQQBHADQAQQBkAEEAQgBmAEEASABRAEEAWgBRAEIANABBAEgAUQBBAEsAQQBCAGgAQQBHADQAQQBaAHcAQgBzAEEARwBVAEEASQBBAEEAOQBBAEMAQQBBAE8AUQBBAHcAQQBDAHcAQQBJAEEAQgAyAEEARwBvAEEAZABRAEIAegBBAEgAUQBBAEkAQQBBADkAQQBDAEEAQQBMAGcAQQAwAEEAQwB3AEEASQBBAEIAbwBBAEcAbwBBAGQAUQBCAHoAQQBIAFEAQQBJAEEAQQA5AEEAQwBBAEEATQBRAEEAcABBAEMAawBBAEMAZwBCAGcAQQBHAEEAQQBZAEEAQQA9AAoAcwB1AGYAZgBpAHgAOgA=:31b8e172-b470-440e-83d8-e6b185028602</code></pre>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ufo_sightings <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 80332 Columns: 11
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (8): date_time, city_area, state, country, ufo_shape, described_encounte...
+dbl (3): encounter_length, latitude, longitude
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mean_ufo <span class="ot">&lt;-</span> ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>(country, encounter_length) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ufo_shape, country) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_time =</span> <span class="fu">mean</span>(encounter_length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'ufo_shape'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_ufo <span class="ot">&lt;-</span> <span class="fu">left_join</span>(mean_ufo, ufo_sightings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining, by = c("ufo_shape", "country")</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>new_ufo <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> ufo_shape, <span class="at">y =</span> mean_time, <span class="at">color =</span> country)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"UFO Shape"</span>, <span class="at">y =</span> <span class="st">"Average Length of Ecounter (Seconds)"</span>, <span class="at">title =</span> <span class="st">"UFO Encounter Length by Shape and Country"</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> .<span class="dv">4</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn’t overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>In order to answer the question, which is to investigate what the relationship between the UFO shape and the length of the encounter time (in seconds) is, based on the country, we decided to form scatterplot graphs, based on countries, to visualize the relationship between UFO shape and mean length of time.</p>
+<p>We have come to the conclusion that in general, there is no significant correlation between all the different UFO shapes and the mean encounter time. This is exhibited by the consistently low mean encounter times for almost all UFO shapes across countries. However, depending on the country, there are specific UFO shapes that result in high outlying mean encounter times. Specifically, for Great Britain (GB), the cone shaped UFOs yield, on average, a mean encounter time of 2000000 seconds. For Canada, the shapes categorized as “other” yields, on average, around 48000 seconds. This isn’t as significant as that of the mean encounter time for cone shaped UFOs in GB, but it is also an outlier from the average encounter time of close to zero for all other UFO shapes.</p>
+<p>Despite these significant outliers, the overwhelmingly low average of mean encounter times across UFO shapes and the countries examined demonstrate that there is not a significant relationship between the shape of a UFO and the length of time it was encountered on Earth.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
