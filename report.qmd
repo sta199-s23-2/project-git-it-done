@@ -40,6 +40,8 @@ ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascie
 ```
 
 ```{r}
+
+
 mean_ufo <- ufo_sightings |>
   drop_na(country, encounter_length) |>
   group_by(ufo_shape, country) |>
@@ -57,20 +59,54 @@ new_ufo |>
   theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1)) +
   facet_wrap(~country, ncol = 2)
 
-
+filter_ufo <- mean_ufo |>
+  filter(ufo_shape != "sphere")
 
 wanted_country <- c("us")
 
-new_ufo |>
+filter_ufo |>
   filter(country %in% wanted_country) |>
   ggplot(
     aes(x = ufo_shape, y = mean_time)
   ) +
-  geom_line() +
   geom_point() +
   labs(x = "UFO Shape", y = "Average Length of Ecounter (Seconds)", title = "UFO Encounter Length by Shape and Country") +
   theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1)) +
   facet_wrap(~country, ncol = 2)
+```
+
+```{r}
+
+#Gus's Code
+
+filter_cylinder <- ufo_sightings |>
+  filter(ufo_shape == "cylinder")
+
+filter_light <- ufo_sightings |>
+  filter(ufo_shape == "light")
+
+filter_circle <- ufo_sightings |>
+  filter(ufo_shape == "circle")
+
+mean_cylinder <- filter_cylinder |>
+  drop_na(encounter_length) |>
+  summarize(mean_time = mean(encounter_length))
+
+mean_light <- filter_light |>
+  drop_na(encounter_length) |>
+  summarize(mean_time = mean(encounter_length)) 
+
+mean_circle <- filter_circle |>
+  drop_na(encounter_length) |>
+  summarize(mean_time = mean(encounter_length)) 
+
+null_dist <- ufo_sightings |>
+  specify(response = encounter_length) |>
+  hypothesize(null = "point", mu = 35) |>
+  generate(reps = 1000, type = "bootstrap") |>
+  calculate(stat = "mean")
+
+glimpse(null_dist)
 ```
 
 To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn't overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.
