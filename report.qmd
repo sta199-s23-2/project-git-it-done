@@ -79,46 +79,35 @@ filter_ufo |>
 
 #Gus's Code
 
-filter_cylinder <- ufo_sightings |>
-  filter(ufo_shape == "cylinder")
+filter_cylinder_US_CA <- ufo_sightings |>
+  filter(ufo_shape == "cylinder" & country == "us" | country == "ca") |>
+  mutate(countr = ifelse(country == "us", 1, 0))
 
-filter_light <- ufo_sightings |>
-  filter(ufo_shape == "light")
+filter_circle_US_CA <- ufo_sightings |>
+  filter(ufo_shape == "circle" & country == "us" | country == "ca")
 
-filter_circle <- ufo_sightings |>
-  filter(ufo_shape == "circle")
-
-mean_cylinder <- filter_cylinder |>
+median_cylinder_US_CA <- filter_cylinder_US_CA |>
   drop_na(encounter_length) |>
-  summarize(mean_time = mean(encounter_length))
+  summarize(median_time = median(encounter_length))
 
-mean_light <- filter_light |>
+median_circle_US <- filter_circle_US_CA |>
   drop_na(encounter_length) |>
-  summarize(mean_time = mean(encounter_length)) 
+  summarize(median_time = median(encounter_length))
+```
 
-mean_circle <- filter_circle |>
-  drop_na(encounter_length) |>
-  summarize(mean_time = mean(encounter_length)) 
+```{r}
+cyl_null_dist_US_CA <- filter_cylinder_US_CA |>
+  specify(response = encounter_length , explanatory = countr) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in medians")
 
-cyl_null_dist <- filter_cylinder |>
-  specify(response = encounter_length) |>
-  hypothesize(null = "point", mu = 3426.512) |>
-  generate(reps = 1000, type = "bootstrap") |>
-  calculate(stat = "mean")
-
-cyl_null_dist |>
+cyl_null_dist_US_CA |>
   ggplot(
-    aes(x = stat)
-  ) +
+    aes(x = stat)) +
   geom_histogram() +
-  labs(x = "Mean Encouter Length (Seconds)", y = "Count", title = "Distribution of Encounter Length for Cylinders")
+  labs(x = "Median Encouter Length (Seconds)", y = "Count", title = "Distribution of Encounter Length for Cylinders in the US and Canada")
 
-filter_cylinder |>
-  ggplot(
-    aes(x = encounter_length)
-  ) +
-  geom_histogram() +
-  labs(x = "Mean Encouter Length (Seconds)", y = "Count", title = "Distribution of Encounter Length for Cylinders")
 ```
 
 To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn't overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.
