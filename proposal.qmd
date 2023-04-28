@@ -19,6 +19,15 @@ library(tidyverse)
 
 # Data 1
 
+```{r}
+#| label: load-data 1
+#| message: false
+#| warning: false
+
+ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
+
+```
+
 ## Introduction and data
 
 The data set, ufo_sightings.csv, is from the CORGIS Dataset project. This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
@@ -44,9 +53,7 @@ This research question builds on the research about UFO sightings worldwide, and
 ## Glimpse of data
 
 ```{r}
-#| label: load-data-1
-
-ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
+#| label: glimpse data 1
 
 glimpse(ufo_sightings)
 ```
@@ -54,7 +61,9 @@ glimpse(ufo_sightings)
 # Data 2
 
 ```{r}
-#|label: south-dakota-covid
+#|label: load data 2
+#|#| message: false
+#| warning: false
 
 library(readxl)
 
@@ -88,15 +97,21 @@ Our research expands beyond this in two key ways, looking at the specific impact
 ## Glimpse of data
 
 ```{r}
-#| label: load-data-2
-#| message: false
-#| warning: false
-
+#| label: glimpse data 2
 
 glimpse(sd_covid)
 ```
 
 # Data 3
+
+```{r}
+#|label: load data 3
+#|#| message: false
+#| warning: false
+
+
+coffee <- read_csv("data/coffee.csv")
+```
 
 ## Introduction and data
 
@@ -135,8 +150,7 @@ Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). Sensory ana
 ## Glimpse of data
 
 ```{r}
-#| label: load-data-3
+#| label: glimpse-data-3
 
-coffee <- read_csv("data/coffee.csv")
 glimpse(coffee)
 ```
