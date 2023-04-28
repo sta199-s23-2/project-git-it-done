@@ -5,8 +5,6 @@ format: html
 editor: visual
 ---
 
-<<<<<<< HEAD
-=======
 ```{r}
 #| label: load-pkgs
 
@@ -18,7 +16,7 @@ editor: visual
 
 library(tidyverse)
 ```
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+
 # Data 1
 
 ## Introduction and data
@@ -37,13 +35,8 @@ Several of the variables are categorical: date_time, city_area, state, country, 
 
 ## Literature
 
-<<<<<<< HEAD
-## Literature
-=======
 Here is an article about how NASA will bring the scientific standard to the search for UFOs.
->>>>>>> 0e60254fd73925511718d927f4c14d94c4f98d18
-
-https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/
+ https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/
 
 This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial phenomena). The University of Rochester outlines that some physicists and astronomers strongly dispute the existence of extraterrestrial life. It's argued that NASA is creating a commission to investigate UFOs and their connection to extraterrestrial life in order to bring some scientific credibility to the debate, by using technology to detect biosignatures. Biosignatures are signatures that we pick up on when a far-away planet is altered by its biosphere - this would be a sign of life. Overall, this article sums up how perhaps the most scientifically credible agency will get involved in the scientific research into what UFOs could mean.
 
@@ -53,8 +46,6 @@ This research question builds on the research about UFO sightings worldwide, and
 
 ```{r}
 #| label: load-data-1
-#| message: false
-#| warning: false
 
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
 
@@ -68,130 +59,46 @@ glimpse(ufo_sightings)
 
 library(readxl)
 
-South_Dakota_COVID19_Feature_Layer_1_ <- read_excel("data/South_Dakota_COVID19_Feature_Layer (1).xlsx")
+sd_covid <- read_excel("data/South_Dakota_COVID19_Feature_Layer (1).xlsx")
 ```
 
 ## Introduction and data
 
-<<<<<<< HEAD
--   The data set, ufo_sightings.csv, is from the CORGIS Dataset project.
-=======
--   Identify the source of the data. The source of this data is data.gov.
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
-
--   This data was originally collected by the National UFO Reporting Center (NUFORC) and tidied by a person named Sigmond Axel.
-
-<<<<<<< HEAD
--   The observations collect data about UFO sightings worldwide, from date and time to city area, date documented, and more specific information about the description of the UFO, from size to lights.
-=======
-It was found through the information reported by the South Dakota Department of Health through medical records. It is continually collected, but our set spans from March 17th, 2020 to March 3rd, 2023.
-
--   Write a brief description of the observations.
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+This data set was found through the information reported by the South Dakota Department of Health through medical records. It is continually collected, but our set spans from March 17th, 2020 to March 3rd, 2023.
 
 The data show COVID cases collected in South Dakota, including how many cases were confirmed and recovered on a given date. The data separates patients by age and sex. The only ethical concern in the false reporting of data by medical centers of the SDDOH, but there is no evidence to support this concern.
 
 ## Research question
 
-<<<<<<< HEAD
--   What is the most common location UFOs are sighted in? What is the most common size or shape of UFO? How can we analyze these reports to contribute to the dialogue about whether or not UFOs are evidence of alien life?
-
-UPDATED RESEARCH QUESTION: What is the most common shape and size of UFO based on what continent it is sighted on? How can this data be analyzed to consider whether or not UFOs are real and evidence of alien life?
-=======
 How did cases effect different demographics based on how many people were tested in South Dakota?
 
 This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research.
 
-How did cases effect different demographics based on how many people were tested in South Dakota?
-
-This question is important because it explores the correlation between COVID testing and demographic impacts within a relatively unstudied rural state. It helps individuals in this area gain more clarity on COVID in a state that lacks holistic COVID research.
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
-
--   This is a complicated research topic because there is a lot of debate among the general public about whether or not UFOs are indicators of alien life. I believe that we can use this data to determine if there are any continuities across the data that might point to how solid these UFO reports are (essentially, if they are corroborated). I do not believe there will be enough correlation across the data to support the existence of alien life.
-
-<<<<<<< HEAD
--   Several of the variables are categorical: date_time, city_area, state, country, ufo_shape, described_encounter_length, description, and date_documented. The quantitative variables are encounter_length, latitude, and longitude.
-=======
-This research topic will explore how the quatity of COVID testing effects different age and sex groups. We believe that COVID cases will effect older men the most, despite being the group with the least amount of aggregrate beliefs in COVID-19.
-
--   Identify the types of variables in your research question. Categorical? Quantitative?
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
+This research topic will explore how the quantity of COVID testing effects different age and sex groups. We believe that COVID cases will effect older men the most, despite being the group with the least amount of aggregate beliefs in COVID-19.
 
 With the exception of the reported date, state name (which is all the same), and global ID, all of the variables are quantitative.
 
 ## Literature
 
--   https://www.rochester.edu/newscenter/nasa-brings-standards-of-evidence-to-the-search-for-ufos-527122/ Here is an article about how NASA will bring the scientific standard to the search for UFOs.
-
-<<<<<<< HEAD
--   This article describes how NASA will be investigating UFOs, also referred to in the article as UAPs (unidentified aerial phenomena). The University of Rochester outlines that some physicists and astronomers strongly dispute the existence of extraterrestrial life. It's argued that NASA is creating a commission to investigate UFOs and their connection to extraterrestrial life in order to bring some scientific credibility to the debate, by using technology to detect biosignatures. Biosignatures are signatures that we pick up on when a far-away planet is altered by its biosphere - this would be a sign of life. Overall, this article sums up how perhaps the most scientifically credible agency will get involved in the scientific research into what UFOs could mean.
-
--   This research question builds on the research about UFO sightings worldwide, and looks at commonalities across sightings across time and place.
-=======
 Abate BB, Kassie AM, Kassaw MW, et alSex difference in coronavirus disease (COVID-19): a systematic review and meta-analysisBMJ Open 2020;10:e040129. doi: 10.1136/bmjopen-2020-040129
 
--   Provide a one paragraph summary about the article.
-
 This article discusses the discrepancies between male and female COVID case numbers. The article looks at a wide range of people within the United States and factors in solely confirmed testing. The study did not include any information on the number of tests that were negative, focusing only on confirmed cases. This is significant because rather than looking at the overall response to COVID cases (i.e. increased mental health effects or differing frequency in testing based on sex), the study focused solely on who contracted COVID. The article supported the claim that men experience COVID in higher numbers.
-
--   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
 
 Our research expands beyond this in two key ways, looking at the specific impact on a geographic region and understanding the role that age plays within the COVID contraction discrepancy.
 
 ## Glimpse of data
 
-<<<<<<< HEAD
 ```{r}
 #| label: load-data-2
 #| message: false
 #| warning: false
 
 
-ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
-
-glimpse(ufo_sightings)
+glimpse(sd_covid)
 ```
-=======
->>>>>>> d3121493cec11b7efab07a7a8821c65db51938d0
-# Data 3
 
-## Introduction and data
-
--   Identify the source of the data.
-
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
-
--   Write a brief description of the observations.
-
-The source of the data is from the CORGIS (Collection Of Really Great, Interesting Situated) Dataset Project.
-
-## Research question
-
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
-
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
-
--   Identify the types of variables in your research question. Categorical? Quantitative?
-
-## Literature
-
--   Find one published credible article on the topic you are interested in researching.
-
--   Provide a one paragraph summary about the article.
-
--   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
 ## Glimpse of data
-
-```{r}
-#| label: load-data-3
-#| message: false
-#| warning: false
-
-coffee <- read_csv("data/coffee.csv")
-glimpse(coffee)
-```
 
 INTRODUCTION AND DATA
 
@@ -236,3 +143,10 @@ Works Cited:
 Liliana, E. G., Vallejos-Torres, G., & Luis Arévalo López. (2017). Sensory analysis of four cultivars of coffee (0RW1S34RfeSDcfkexd09rT2Coffea arabica1RW1S34RfeSDcfkexd09rT2 L.), grown at different altitudes in the San Martin region - Peru. Ciência Rural, 47(9). https://doi.org/10.1590/0103-8478cr20160882.
 
 \
+```{r}
+#| label: load-data-3
+
+coffee <- read_csv("data/coffee.csv")
+glimpse(coffee)
+```
+
