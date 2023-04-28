@@ -44,6 +44,14 @@ There are three relevant variables we're examining from the data set: length of 
 
 # [**Literature Review**]{.underline}
 
+In the late 1940s, the Air Force began a study called Project Sign (later called Project Grudge and then Project Blue Book) for the purpose of analyzing unidentified flying objects. Between 1948 and 1969 this project investigated over 12,000 sightings of unidentified aerial objects. At the end of the 22 years the study took data from (1947-1969), the Air Force filtered out aerial phenomena with explanations, ranging from "weather conditions" to balloons and satellites.
+
+This study found that of the 12,618 UFO sightings over the period of the study, only 701 could not be explained. I could not find much about the design, but it seemed to be focused on dividing aerial phenomena into "unidentified" and "identified" objects.
+
+This report on Project Sign connects to our research by demonstrating the necessity of expanding on visualizing what UFOs look like. It provides a good basis for initial research into UFOs, but our research will respond to a more detailed and recent data set. While this Air Force study was likely groundbreaking for its time, our research will work on evaluating similarities and differences in UFO sightings beyond just classifying a phenomenon as "unidentified". We also have fewer limitations on analyzing the data - in the context of the Air Force study, the motivation was evaluating the possibility of a national security threat. Our study provides a broader perspective, both beyond national security interests and beyond American borders.
+
+[**Link to study:**]{.underline} https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/UFOsandUAPs/2d_af_1.pdf
+
 # Methodology
 
 ```{r}
