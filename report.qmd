@@ -140,6 +140,98 @@ cyl_null_dist_US_CA |>
 
 ```
 
+```{r}
+
+#| label: hypothesis test
+
+new_ufo_sightings <- ufo_sightings |>
+  mutate(
+    decade = case_when((str_detect(date_time, "194") == TRUE) ~ "1940s",
+                       (str_detect(date_time, "195") == TRUE) ~ "1950s",
+                       (str_detect(date_time, "196") == TRUE) ~ "1960s",
+                       (str_detect(date_time, "197") == TRUE) ~ "1970s",
+                       (str_detect(date_time, "198") == TRUE) ~ "1980s",
+                       (str_detect(date_time, "199") == TRUE) ~ "1990s",
+                       (str_detect(date_time, "200") == TRUE) ~ "2000s",
+                       (str_detect(date_time, "201") == TRUE) ~ "2010s"
+    )
+  )
+
+new_ufo_sightings <- new_ufo_sightings |>
+  mutate(after_70 = case_when((str_detect(date_time, "194") == TRUE) ~ "NO",
+                                  (str_detect(date_time, "195") == TRUE) ~ "NO",
+                                  (str_detect(date_time, "196") == TRUE) ~ "NO",
+                                  (str_detect(date_time, "197") == TRUE) ~ "NO",
+                                  (str_detect(date_time, "198") == TRUE) ~ "YES",
+                                  (str_detect(date_time, "199") == TRUE) ~ "YES",
+                                  (str_detect(date_time, "200") == TRUE) ~ "YES",
+                                  (str_detect(date_time, "201") == TRUE) ~ "YES"
+  ))
+
+ufo_us <- new_ufo_sightings |>
+  filter(country == "us")
+
+ufo_gb <- new_ufo_sightings |>
+  filter(country == "gb")
+
+ufo_ca <- new_ufo_sightings |>
+  filter(country == "ca")
+
+ufo_au <- new_ufo_sightings |>
+  filter(country == "au")
+
+ufo_de <- new_ufo_sightings |>
+  filter(country == "de")
+
+new_ufo_sightings |>
+  drop_na()|>
+  group_by(country, after_70) |>
+  summarize(mean(encounter_length))
+
+mean_us_no = 6968
+mean_us_yes = 5450
+mean_ca_no = 1242
+mean_ca_yes = 30436
+mean_gb_no = 900
+mean_gb_yes = 9088
+
+null_dist_us <- ufo_us |>
+  filter(after_70 %in% c("NO", "YES")) |>
+  specify(response = encounter_length, explanatory = after_70) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 100, type = "permute") |>
+  calculate(stat = "diff in means", order = c("NO", "YES"))
+
+obs_stat_us = mean_us_no - mean_us_yes
+
+null_dist_us |>
+  get_p_value(obs_stat_us, direction = "two sided")
+
+null_dist_ca <- ufo_ca |>
+  filter(after_70 %in% c("NO", "YES")) |>
+  specify(response = encounter_length, explanatory = after_70) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 100, type = "permute") |>
+  calculate(stat = "diff in means", order = c("NO", "YES"))
+
+obs_stat_ca = mean_ca_no - mean_ca_yes
+
+null_dist_ca |>
+  get_p_value(obs_stat_ca, direction = "two sided")
+
+null_dist_gb <- ufo_gb |>
+  filter(after_70 %in% c("NO", "YES")) |>
+  specify(response = encounter_length, explanatory = after_70) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 100, type = "permute") |>
+  calculate(stat = "diff in means", order = c("NO", "YES"))
+
+obs_stat_gb = mean_gb_no - mean_gb_yes
+
+null_dist_gb |>
+  get_p_value(obs_stat_gb, direction = "two sided")
+```
+
 To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn't overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.
 
 We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this were able to reject the null hypothesis.
