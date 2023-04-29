@@ -16,15 +16,15 @@ library(tidyverse)
 library(tidymodels)
 ```
 
-    ## Introduction and Data
-
-    Our topic is UFO sightings.
+# Introduction and Data
 
 Our topic for this project is UFOs, also known as "Unidentified Flying Objects". UFOs as proof of alien life are largely written off as pseudoscience by the scientific community, but this does not take away from the fact that there are tens of thousands of sightings reported annually. In 2020, the Pentagon released videos of unidentified flying objects, sparking the intrigue of enthusiasts and skeptics alike. This is outlined in a New York Times article\*\* that also highlights how the government has been looking into unidentified aerial phenomena (UAP; another term for UFO) since the 1950s; articles like this one add merit to our research into consistencies in examining UFOs worldwide. Overall, our group chose to use this data set on UFOs as our research because it was a topic that really piqued our interest and that we knew would maintain its intrigue for the duration of the semester.
 
-[\*\*Link to NYT article:]{.underline} https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html
+[Link to NYT article:]{.underline} https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html
 
-**The research question we have landed on is the following:** Does UFO encounter length increase each decade following the release of 1977 film "Close Encounters of the Third Kind" when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
+**The research question we have landed on is the following:** Is the average length of a UFO encounter greater in the decades after 1970 when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
+
+We chose the decade of 1970 as our indicator because it marked the release of "Close Encounters of the Third Kind," which could be a possible explanation in the case that our null hypothesis is rejected. This will be discussed deeper in the discussion section.
 
 Ethical issues do not seem to be an issue with this data set, because we do not have any personal information about the sources of the data. All of the data is anonymous and has no identifying information which eliminates ethical concerns.
 
@@ -42,7 +42,7 @@ There are three relevant variables we're examining from the data set: length of 
 
 -   Finally, the Location.country variable reports what country the particular UFO was sighted in.
 
-# [**Literature Review**]{.underline}
+# Literature Review
 
 In the late 1940s, the Air Force began a study called Project Sign (later called Project Grudge and then Project Blue Book) for the purpose of analyzing unidentified flying objects. Between 1948 and 1969 this project investigated over 12,000 sightings of unidentified aerial objects. At the end of the 22 years the study took data from (1947-1969), the Air Force filtered out aerial phenomena with explanations, ranging from "weather conditions" to balloons and satellites.
 
@@ -58,85 +58,14 @@ In 1977, the Spielberg film "Close Encounters of the Third Kind"\* was released,
 
 # Methodology
 
-**Null hypothesis:** There IS NOT a difference in mean encounter length between UFO encounters before and after 1977.
+**Null hypothesis:** The mean encounter length between UFO encounters in the decades before 1977 is equal to encounter length in the decades after 1977.
 
-**Alternative hypothesis:** There IS a difference in mean encounter length between UFO encounters before and after 1977.
+**Alternative hypothesis:** The mean encounter length between UFO encounters in the decades before 1977 is less than in the decades after 1977.
 
 ```{r}
 library(tidyverse)
 library(tidymodels)
 ufo_sightings <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv")
-
-```
-
-```{r}
-
-
-mean_ufo <- ufo_sightings |>
-  drop_na(country, encounter_length) |>
-  group_by(ufo_shape, country) |>
-  summarize(mean_time = mean(encounter_length))
-
-new_ufo <- left_join(mean_ufo, ufo_sightings)
-
-new_ufo |>
-  ggplot(
-    aes(x = ufo_shape, y = mean_time, color = country)
-  ) +
-  geom_line() +
-  geom_point() +
-  labs(x = "UFO Shape", y = "Average Length of Ecounter (Seconds)", title = "UFO Encounter Length by Shape and Country") +
-  theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1)) +
-  facet_wrap(~country, ncol = 2)
-
-filter_ufo <- mean_ufo |>
-  filter(ufo_shape != "sphere")
-
-wanted_country <- c("us")
-
-filter_ufo |>
-  filter(country %in% wanted_country) |>
-  ggplot(
-    aes(x = ufo_shape, y = mean_time)
-  ) +
-  geom_point() +
-  labs(x = "UFO Shape", y = "Average Length of Ecounter (Seconds)", title = "UFO Encounter Length by Shape and Country") +
-  theme(axis.text.x = element_text(angle = 90, vjust = .4, hjust = 1)) +
-  facet_wrap(~country, ncol = 2)
-```
-
-```{r}
-
-#Gus's Code
-
-filter_cylinder_US_CA <- ufo_sightings |>
-  filter(ufo_shape == "cylinder" & country == "us" | country == "ca") |>
-  mutate(countr = ifelse(country == "us", 1, 0))
-
-filter_circle_US_CA <- ufo_sightings |>
-  filter(ufo_shape == "circle" & country == "us" | country == "ca")
-
-median_cylinder_US_CA <- filter_cylinder_US_CA |>
-  drop_na(encounter_length) |>
-  summarize(median_time = median(encounter_length))
-
-median_circle_US <- filter_circle_US_CA |>
-  drop_na(encounter_length) |>
-  summarize(median_time = median(encounter_length))
-```
-
-```{r}
-cyl_null_dist_US_CA <- filter_cylinder_US_CA |>
-  specify(response = encounter_length , explanatory = countr) |>
-  hypothesize(null = "independence") |>
-  generate(reps = 1000, type = "permute") |>
-  calculate(stat = "diff in medians")
-
-cyl_null_dist_US_CA |>
-  ggplot(
-    aes(x = stat)) +
-  geom_histogram() +
-  labs(x = "Median Encouter Length (Seconds)", y = "Count", title = "Distribution of Encounter Length for Cylinders in the US and Canada")
 
 ```
 
@@ -199,7 +128,7 @@ null_dist_us <- ufo_us |>
   filter(after_70 %in% c("NO", "YES")) |>
   specify(response = encounter_length, explanatory = after_70) |>
   hypothesize(null = "independence") |>
-  generate(reps = 100, type = "permute") |>
+  generate(reps = 1000, type = "permute") |>
   calculate(stat = "diff in means", order = c("NO", "YES"))
 
 obs_stat_us = mean_us_no - mean_us_yes
@@ -211,7 +140,7 @@ null_dist_ca <- ufo_ca |>
   filter(after_70 %in% c("NO", "YES")) |>
   specify(response = encounter_length, explanatory = after_70) |>
   hypothesize(null = "independence") |>
-  generate(reps = 100, type = "permute") |>
+  generate(reps = 1000, type = "permute") |>
   calculate(stat = "diff in means", order = c("NO", "YES"))
 
 obs_stat_ca = mean_ca_no - mean_ca_yes
@@ -223,7 +152,7 @@ null_dist_gb <- ufo_gb |>
   filter(after_70 %in% c("NO", "YES")) |>
   specify(response = encounter_length, explanatory = after_70) |>
   hypothesize(null = "independence") |>
-  generate(reps = 100, type = "permute") |>
+  generate(reps = 1000, type = "permute") |>
   calculate(stat = "diff in means", order = c("NO", "YES"))
 
 obs_stat_gb = mean_gb_no - mean_gb_yes
@@ -237,6 +166,17 @@ To answer our research question, we calculated the mean encounter length based o
 We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this were able to reject the null hypothesis.
 
 ## Results
+
+```{r}
+# | label: graph
+
+new_ufo_sightings |>
+  drop_na() |>
+  ggplot(aes(x = decade, y = encounter_length)) +
+  geom_point() +
+  facet_wrap(~country) +
+  labs(x = "Decades", y = "Encounter Length (seconds)", title = "Relationship between the decade of UFO sighting and encounter time of each sighting")
+```
 
 In order to answer the question, which is to investigate what the relationship between the UFO shape and the length of the encounter time (in seconds) is, based on the country, we decided to form scatterplot graphs, based on countries, to visualize the relationship between UFO shape and mean length of time.
 
