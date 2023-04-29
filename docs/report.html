@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project title</title>
+<title>TEAM 1 GIT IT DONE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -166,11 +166,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#literature-review" id="toc-literature-review" class="nav-link active" data-scroll-target="#literature-review"><u><strong>Literature Review</strong></u></a></li>
-  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
-  <ul class="collapse">
+  <li><a href="#introduction-and-data" id="toc-introduction-and-data" class="nav-link active" data-scroll-target="#introduction-and-data">Introduction and Data</a></li>
+  <li><a href="#literature-review" id="toc-literature-review" class="nav-link" data-scroll-target="#literature-review">Literature Review</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   </ul>
 </nav>
     </div>
@@ -179,7 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project title</h1>
+<h1 class="title">TEAM 1 GIT IT DONE</h1>
 <p class="subtitle lead">Report</p>
 </div>
 
@@ -198,12 +198,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<pre><code>## Introduction and Data
-
-Our topic is UFO sightings.</code></pre>
+<section id="introduction-and-data" class="level1">
+<h1>Introduction and Data</h1>
 <p>Our topic for this project is UFOs, also known as “Unidentified Flying Objects”. UFOs as proof of alien life are largely written off as pseudoscience by the scientific community, but this does not take away from the fact that there are tens of thousands of sightings reported annually. In 2020, the Pentagon released videos of unidentified flying objects, sparking the intrigue of enthusiasts and skeptics alike. This is outlined in a New York Times article** that also highlights how the government has been looking into unidentified aerial phenomena (UAP; another term for UFO) since the 1950s; articles like this one add merit to our research into consistencies in examining UFOs worldwide. Overall, our group chose to use this data set on UFOs as our research because it was a topic that really piqued our interest and that we knew would maintain its intrigue for the duration of the semester.</p>
-<p><u>**Link to NYT article:</u> https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html</p>
-<p><strong>The research question we have landed on is the following:</strong> Does UFO encounter length increase each decade following the release of 1977 film “Close Encounters of the Third Kind” when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.</p>
+<p><u>Link to NYT article:</u> https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html</p>
+<p><strong>The research question we have landed on is the following:</strong> Is the average length of a UFO encounter greater in the decades after 1970 when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.</p>
+<p>We chose the decade of 1970 as our indicator because it marked the release of “Close Encounters of the Third Kind,” which could be a possible explanation in the case that our null hypothesis is rejected. This will be discussed deeper in the discussion section.</p>
 <p>Ethical issues do not seem to be an issue with this data set, because we do not have any personal information about the sources of the data. All of the data is anonymous and has no identifying information which eliminates ethical concerns.</p>
 <p>The data was uploaded by a man named Sam Arnold to Github on October 28, 2022. It originally came from the National UFO Reporting Center* , and was tidied by a Github user named Sigmond Axel**, originally in 2014. According to the link on Github, this data was initially uploaded as a part of a Tidy Tuesday project. The cases are over 80,000 UFO sightings worldwide.</p>
 <p><u>*Link to NUFORC website:</u> https://nuforc.org/</p>
@@ -214,8 +214,9 @@ Our topic is UFO sightings.</code></pre>
 <li><p>Year refers to the year the UFO was sighted in.</p></li>
 <li><p>Finally, the Location.country variable reports what country the particular UFO was sighted in.</p></li>
 </ul>
+</section>
 <section id="literature-review" class="level1">
-<h1><u><strong>Literature Review</strong></u></h1>
+<h1>Literature Review</h1>
 <p>In the late 1940s, the Air Force began a study called Project Sign (later called Project Grudge and then Project Blue Book) for the purpose of analyzing unidentified flying objects. Between 1948 and 1969 this project investigated over 12,000 sightings of unidentified aerial objects. At the end of the 22 years the study took data from (1947-1969), the Air Force filtered out aerial phenomena with explanations, ranging from “weather conditions” to balloons and satellites.</p>
 <p>This study found that of the 12,618 UFO sightings over the period of the study, only 701 could not be explained. I could not find much about the design, but it seemed to be focused on dividing aerial phenomena into “unidentified” and “identified” objects.</p>
 <p>This report on Project Sign connects to our research by demonstrating the necessity of expanding on visualizing what UFOs look like. It provides a good basis for initial research into UFOs, but our research will respond to a more detailed and recent data set. While this Air Force study was likely groundbreaking for its time, our research will work on evaluating similarities and differences in UFO sightings beyond just classifying a phenomenon as “unidentified”. We also have fewer limitations on analyzing the data - in the context of the Air Force study, the motivation was evaluating the possibility of a national security threat. Our study provides a broader perspective, both beyond national security interests and beyond American borders.</p>
@@ -225,12 +226,12 @@ Our topic is UFO sightings.</code></pre>
 </section>
 <section id="methodology" class="level1">
 <h1>Methodology</h1>
-<p><strong>Null hypothesis:</strong> There IS NOT a difference in mean encounter length between UFO encounters before and after 1977.</p>
-<p><strong>Alternative hypothesis:</strong> There IS a difference in mean encounter length between UFO encounters before and after 1977.</p>
+<p><strong>Null hypothesis:</strong> The mean encounter length between UFO encounters in the decades before 1977 is equal to encounter length in the decades after 1977.</p>
+<p><strong>Alternative hypothesis:</strong> The mean encounter length between UFO encounters in the decades before 1977 is less than in the decades after 1977.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ufo_sightings <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ufo_sightings <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-06-25/ufo_sightings.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 80332 Columns: 11
 ── Column specification ────────────────────────────────────────────────────────
@@ -243,60 +244,51 @@ dbl (3): encounter_length, latitude, longitude
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hypothesis test</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="ot">&lt;-</span> ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">decade =</span> <span class="fu">case_when</span>((<span class="fu">str_detect</span>(date_time, <span class="st">"194"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1940s"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"195"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1950s"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"196"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1960s"</span>,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"197"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1970s"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"198"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1980s"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"199"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1990s"</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"200"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"2000s"</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"201"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"2010s"</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">after_70 =</span> <span class="fu">case_when</span>((<span class="fu">str_detect</span>(date_time, <span class="st">"194"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"195"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"196"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"197"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"198"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span>,</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"199"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span>,</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"200"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span>,</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"201"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> decade, <span class="at">y =</span> encounter_length)) <span class="sc">+</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country) <span class="sc">+</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Decades"</span>, <span class="at">y =</span> <span class="st">"Encounter Length (seconds)"</span>, <span class="at">title =</span> <span class="st">"Relationship between the decade of UFO sighting and encounter time of each sighting"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ufo_us <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"us"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ufo_gb <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"gb"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ufo_ca <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"ca"</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ufo_au <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"au"</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ufo_de <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"de"</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="sc">|&gt;</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()<span class="sc">|&gt;</span></span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country, after_70) <span class="sc">|&gt;</span></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean</span>(encounter_length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: hypothesis test</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="ot">&lt;-</span> ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">decade =</span> <span class="fu">case_when</span>((<span class="fu">str_detect</span>(date_time, <span class="st">"194"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1940s"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"195"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1950s"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"196"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1960s"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"197"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1970s"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"198"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1980s"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"199"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"1990s"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"200"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"2000s"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                       (<span class="fu">str_detect</span>(date_time, <span class="st">"201"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"2010s"</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">after_70 =</span> <span class="fu">case_when</span>((<span class="fu">str_detect</span>(date_time, <span class="st">"194"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"195"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"196"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"197"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"NO"</span>,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"198"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"199"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"200"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span>,</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                                  (<span class="fu">str_detect</span>(date_time, <span class="st">"201"</span>) <span class="sc">==</span> <span class="cn">TRUE</span>) <span class="sc">~</span> <span class="st">"YES"</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>ufo_us <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"us"</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>ufo_gb <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"gb"</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>ufo_ca <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"ca"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>ufo_au <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"au"</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>ufo_de <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"de"</span>)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()<span class="sc">|&gt;</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country, after_70) <span class="sc">|&gt;</span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">mean</span>(encounter_length))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'country'. You can override using the
 `.groups` argument.</code></pre>
@@ -314,77 +306,109 @@ dbl (3): encounter_length, latitude, longitude
 6 us      NO                          6968.
 7 us      YES                         5450.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mean_us_no <span class="ot">=</span> <span class="dv">6968</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mean_us_yes <span class="ot">=</span> <span class="dv">5450</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mean_ca_no <span class="ot">=</span> <span class="dv">1242</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>mean_ca_yes <span class="ot">=</span> <span class="dv">30436</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>mean_gb_no <span class="ot">=</span> <span class="dv">900</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>mean_gb_yes <span class="ot">=</span> <span class="dv">9088</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>null_dist_us <span class="ot">&lt;-</span> ufo_us <span class="sc">|&gt;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(after_70 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> encounter_length, <span class="at">explanatory =</span> after_70) <span class="sc">|&gt;</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mean_us_no <span class="ot">=</span> <span class="dv">6968</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mean_us_yes <span class="ot">=</span> <span class="dv">5450</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mean_ca_no <span class="ot">=</span> <span class="dv">1242</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mean_ca_yes <span class="ot">=</span> <span class="dv">30436</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>mean_gb_no <span class="ot">=</span> <span class="dv">900</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>mean_gb_yes <span class="ot">=</span> <span class="dv">9088</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>null_dist_us <span class="ot">&lt;-</span> ufo_us <span class="sc">|&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(after_70 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> encounter_length, <span class="at">explanatory =</span> after_70) <span class="sc">|&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 2 rows containing missing values.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>obs_stat_us <span class="ot">=</span> mean_us_no <span class="sc">-</span> mean_us_yes</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>null_dist_us <span class="sc">|&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat_us, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>obs_stat_us <span class="ot">=</span> mean_us_no <span class="sc">-</span> mean_us_yes</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>null_dist_us <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat_us, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.322</code></pre>
+1   0.294</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>null_dist_ca <span class="ot">&lt;-</span> ufo_ca <span class="sc">|&gt;</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>null_dist_ca <span class="ot">&lt;-</span> ufo_ca <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(after_70 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> encounter_length, <span class="at">explanatory =</span> after_70) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>))</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>obs_stat_ca <span class="ot">=</span> mean_ca_no <span class="sc">-</span> mean_ca_yes</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>null_dist_ca <span class="sc">|&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat_ca, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.966</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>null_dist_gb <span class="ot">&lt;-</span> ufo_gb <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(after_70 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> encounter_length, <span class="at">explanatory =</span> after_70) <span class="sc">|&gt;</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>))</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>obs_stat_ca <span class="ot">=</span> mean_ca_no <span class="sc">-</span> mean_ca_yes</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>obs_stat_gb <span class="ot">=</span> mean_gb_no <span class="sc">-</span> mean_gb_yes</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>null_dist_ca <span class="sc">|&gt;</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat_ca, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>null_dist_gb <span class="sc">|&gt;</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat_gb, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.958</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>null_dist_gb <span class="ot">&lt;-</span> ufo_gb <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(after_70 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> encounter_length, <span class="at">explanatory =</span> after_70) <span class="sc">|&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"independence"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">1000</span>, <span class="at">type =</span> <span class="st">"permute"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"diff in means"</span>, <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"NO"</span>, <span class="st">"YES"</span>))</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>obs_stat_gb <span class="ot">=</span> mean_gb_no <span class="sc">-</span> mean_gb_yes</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>null_dist_gb <span class="sc">|&gt;</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_p_value</span>(obs_stat_gb, <span class="at">direction =</span> <span class="st">"two sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  p_value
-    &lt;dbl&gt;
-1    0.13</code></pre>
+1    0.15</code></pre>
 </div>
 </div>
 <p>To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn’t overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.</p>
-<p>We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this were able to reject the null hypothesis.</p>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>In order to answer the question, which is to investigate what the relationship between the UFO shape and the length of the encounter time (in seconds) is, based on the country, we decided to form scatterplot graphs, based on countries, to visualize the relationship between UFO shape and mean length of time.</p>
-<p>We have come to the conclusion that in general, there is no significant correlation between all the different UFO shapes and the mean encounter time. This is exhibited by the consistently low mean encounter times for almost all UFO shapes across countries. However, depending on the country, there are specific UFO shapes that result in high outlying mean encounter times. Specifically, for Great Britain (GB), the cone shaped UFOs yield, on average, a mean encounter time of 2000000 seconds. For Canada, the shapes categorized as “other” yields, on average, around 48000 seconds. This isn’t as significant as that of the mean encounter time for cone shaped UFOs in GB, but it is also an outlier from the average encounter time of close to zero for all other UFO shapes.</p>
-<p>Despite these significant outliers, the overwhelmingly low average of mean encounter times across UFO shapes and the countries examined demonstrate that there is not a significant relationship between the shape of a UFO and the length of time it was encountered on Earth.</p>
-
-
+<p>We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this we failed to reject the null hypothesis.</p>
 </section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># | label: graph</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>updated_ufo <span class="ot">&lt;-</span> new_ufo_sightings <span class="sc">|&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">recode</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    country,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">gb =</span> <span class="st">'Great Britain'</span>,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">ca =</span> <span class="st">'Canada'</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">us =</span>  <span class="st">'United States'</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">!=</span> <span class="st">'au'</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>updated_ufo <span class="sc">|&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> decade, <span class="at">y =</span> encounter_length)) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>country) <span class="sc">+</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Decades"</span>, <span class="at">y =</span> <span class="st">"Encounter Length (seconds)"</span>, <span class="at">title =</span> <span class="st">"Relationship between the decade of UFO sighting and encounter time of each sighting"</span>) <span class="sc">+</span> </span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">hjust=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="report_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>In order to answer the question, which investigates the relationship between the UFO shape and the length of the encounter time (in seconds) is, based on the country, and based on whether or not the encounter occurred after 1970, we decided to form scatterplot graphs, based on countries, to visualize the relationship between UFO shape and mean length of time.</p>
+<p>There are big changes in mean encounter length times before versus after 1970, but they do not allow us to reject the null hypothesis. For example, the mean time for UFO encounters in the United States before 1970 was 6968 seconds, while the mean time after 1970 was 5450 seconds. This differs from Canada, where the mean encounter length pre-1970 was 1242 seconds; after 1970 that time shot up to 30436 seconds. Despite this, which may make it seem like we should reject the null hypothesis, in actuality we fail to reject the null hypothesis because our p-value is less than our observed statistic.</p>
+<p>Based on our examination of the relationship between mean encounter time, year, and country of sighting, we fail to reject the null hypothesis. So, there was not a statistically significant higher mean time for UFO encounters after 1970.</p>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<p>From investigating our reserach question, we learned that we can’t work in definites in statistics and hypothesis testing.Though our particular test said that the average length was not greater after 1970s, other forms of analyses on the same dataset could answer the question differently. One way we could improve our analysis would be to eliminate outliers from the dataset. There were significant outliers of encounter_length in Great Britainwhich skewed the data and thus disrupted trends represented in our visualizations.</p>
+<p>We used a hypothesis test to conduct statistical analysis and we failed to reject the null hypothesis. We believe this was an appropriate statisticaltest because we were comparing two groups: the encounter_lengths from before 1970 and after 1970. In the future, a regression analysis might be useful to examine the effect of the time being post-1970 on the encounter_length. But,considering we wanted to examine and compare two groups that divided data over the course of many decades of time, a hypothesis test was more appropriate.</p>
+<p>One issue pertaining to the reliability and validity of our data is that we examined encounter_length, of which the data was calculated from estimationsreported by people in the described_encounter_length variable. For instance, one observation reports a described_encounter_length of “1-2 hours” which was reported as an encounter_length of 7200 seconds or 2 hours. This report isbased off an inaccurate estimation of how long the encounter was, which inevitably contributed to an inaccurate datapoint in our model and visualization.</p>
+<p>One key idea for future work includes comparing the reports of encounter lengthby region (state or province) in order to create a correlational study on howpolitical affiliation may affect reports of UFO sightings (close encounters of the first kind). It would also be worthwhile to partake in data massaging witha dataset like this, largely because of the widespread speculation and assumption by those in the scientific community that UFOs are not real. If we truly wanted to investigate UFO encounters in these five nations, data messaging by filtering out observations with faulty responses for the”description” variable would help us produce the most accurate models about UFO sightings.</p>
+
+
 </section>
 
 </main> <!-- /main -->
