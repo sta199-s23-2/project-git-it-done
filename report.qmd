@@ -54,6 +54,10 @@ This report on Project Sign connects to our research by demonstrating the necess
 
 # Methodology
 
+**Null hypothesis:** There IS NOT a difference in mean encounter length between UFO encounters before and after 1977.
+
+**Alternative hypothesis:** There IS a difference in mean encounter length between UFO encounters before and after 1977.
+
 ```{r}
 library(tidyverse)
 library(tidymodels)
@@ -133,6 +137,8 @@ cyl_null_dist_US_CA |>
 ```
 
 To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn't overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.
+
+We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this were able to accept or reject the null hypothesis.
 
 ## Results
 
