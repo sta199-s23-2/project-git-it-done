@@ -24,7 +24,7 @@ Our topic for this project is UFOs, also known as "Unidentified Flying Objects".
 
 [\*\*Link to NYT article:]{.underline} https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html
 
-**The research question we have landed on is the following:** What is the relationship between the UFO shape and the length of the encounter time (in seconds) based on the country in which the UFO sighting was reported? Our hope is that this will help examine consistencies and contradictory data when investigating UFO reports worldwide.
+**The research question we have landed on is the following:** Does UFO encounter length increase each decade following the release of 1977 film "Close Encounter" when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
 
 Ethical issues do not seem to be an issue with this data set, because we do not have any personal information about the sources of the data. All of the data is anonymous and has no identifying information which eliminates ethical concerns.
 
@@ -38,7 +38,7 @@ There are three relevant variables we're examining from the data set: length of 
 
 -   Data.Encounter duration is measured in seconds and is classified as a "double" variable.
 
--   Data.shape is also a character variable, and options for this category include "disk".
+-   Year refers to the year the UFO was sighted in.
 
 -   Finally, the Location.country variable reports what country the particular UFO was sighted in.
 
