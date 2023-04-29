@@ -22,7 +22,7 @@ Our topic for this project is UFOs, also known as "Unidentified Flying Objects".
 
 [Link to NYT article:]{.underline} https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html
 
-**The research question we have landed on is the following:** Is the average length of a UFO encounter greater in the decades after 1970 when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
+**The research question we have landed on is the following:** Is the average length of a UFO encounter greater in the decades after the decade of 1970 when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
 
 We chose the decade of 1970 as our indicator because it marked the release of "Close Encounters of the Third Kind," which could be a possible explanation in the case that our null hypothesis is rejected. This will be discussed deeper in the discussion section.
 
@@ -57,6 +57,8 @@ In 1977, the Spielberg film "Close Encounters of the Third Kind"\* was released,
 [**Link to study:**]{.underline} https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/UFOsandUAPs/2d_af_1.pdf
 
 # Methodology
+
+We started performing this investigation by implementing a hypothesis testing. Below is the null and alternative hypothesis.
 
 **Null hypothesis:** The mean encounter length between UFO encounters in the decades before 1977 is equal to encounter length in the decades after 1977.
 
@@ -163,7 +165,7 @@ null_dist_gb |>
 
 To answer our research question, we calculated the mean encounter length based on UFO shape. We did this to help condense over 80,000 observations into a format that wasn't overwhelming for a reader to understand. We then split up this mean time by country in order to compare the relationship in the context of our research question.
 
-We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this we failed to reject the null hypothesis.
+We removed Australia (AU) and Germany (country abbreviation DE) from our analysis because there were no observations relevant to the research question or simply too few observations - for instance, Australia had no UFO sightings recorded prior to 1977. Our visualizations were made for mean encounter length across decades by country. We ran a hypothesis test for mean encounter length time of each country, got the p-value, and from this we failed to reject the null hypothesis, meaning that there is not sufficient evidence indicating that the null hypothesis is false.
 
 # Results
 
@@ -191,11 +193,11 @@ and encounter time of each sighting") +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 ```
 
-Our research question investigated the relationship between the UFO shape and the length of the encounter time (in seconds) based on the country and on whether or not the encounter occurred after 1970. We decided to form scatterplot graphs based on countries to visualize the relationship between UFO shape and mean length of encounter time, measured in seconds.
+Our research question investigated the relationship between the decade in which the UFO sighting occurred (and whether or not the sighting occurred before or after the decade of 1970) and the length of the encounter time (in seconds) based on the country. We decided to form scatterplot graphs based on countries to visualize the relationship between UFO shape and mean length of encounter time, measured in seconds.
 
 Because we wanted a clear indicator of what the data looked like before we dove into our hypothesis test.
 
-There are significant differences in mean encounter length times before versus after 1970, but they do not allow us to reject the null hypothesis. For example, the mean time for UFO encounters in the United States before 1970 was 6968 seconds, while the mean time after 1970 was 5450 seconds. This differs from Canada, where the mean encounter length pre-1970 was 1242 seconds; after 1970 that time shot up to 30436 seconds. Despite this, which may make it seem like we should reject the null hypothesis, in actuality we fail to reject the null hypothesis because our p-value is less than our observed statistic.
+There are significant differences in mean encounter length times before versus after 1970, but they do not allow us to reject the null hypothesis. For example, the mean time for UFO encounters in the United States before 1970 was 6968 seconds, while the mean time after 1970 was 5450 seconds. This differs from Canada, where the mean encounter length pre-1970 was 1242 seconds; after 1970 that time shot up to 30436 seconds. Despite this, which may make it seem like we should reject the null hypothesis, in actuality we fail to reject the null hypothesis because our p-value is larger than our level of significance.
 
 Based on our examination of the relationship between mean encounter time and year with respect to country of sighting, we fail to reject the null hypothesis. So, there was not a statistically significant higher mean time for UFO encounters after 1970.
 
@@ -203,7 +205,7 @@ Based on our examination of the relationship between mean encounter time and yea
 
 From investigating our reserach question, we learned that we can't work in definites in statistics and hypothesis testing.Though our particular test said that the average length was not greater after 1970s, other forms of analyses on the same dataset could answer the question differently. One way we could improve our analysis would be to eliminate outliers from the dataset. There were significant outliers of encounter_length in Great Britainwhich skewed the data and thus disrupted trends represented in our visualizations.
 
-We used a hypothesis test to conduct statistical analysis and we failed to reject the null hypothesis. We believe this was an appropriate statisticaltest because we were comparing two groups: the encounter_lengths from before 1970 and after 1970. In the future, a regression analysis might be useful to examine the effect of the time being post-1970 on the encounter_length. But,considering we wanted to examine and compare two groups that divided data over the course of many decades of time, a hypothesis test was more appropriate.
+We used a hypothesis test to conduct statistical analysis and we failed to reject the null hypothesis. We believe this was an appropriate statisticaltest because we were comparing two groups: the encounter_lengths from before 1970 and after 1970. In the future, a regression analysis might be useful to examine the effect of the time being post-1970 on the encounter_length. But, considering we wanted to examine and compare two groups that divided data over the course of many decades of time, a hypothesis test was more appropriate.
 
 One issue pertaining to the reliability and validity of our data is that we examined encounter_length, of which the data was calculated from estimationsreported by people in the described_encounter_length variable. For instance, one observation reports a described_encounter_length of "1-2 hours" which was reported as an encounter_length of 7200 seconds or 2 hours. This report isbased off an inaccurate estimation of how long the encounter was, which inevitably contributed to an inaccurate datapoint in our model and visualization.
 
