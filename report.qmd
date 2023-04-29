@@ -24,7 +24,7 @@ Our topic for this project is UFOs, also known as "Unidentified Flying Objects".
 
 [\*\*Link to NYT article:]{.underline} https://www.nytimes.com/2020/04/28/us/pentagon-ufo-videos.html
 
-**The research question we have landed on is the following:** Does UFO encounter length increase each decade following the release of 1977 film "Close Encounter" when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
+**The research question we have landed on is the following:** Does UFO encounter length increase each decade following the release of 1977 film "Close Encounters of the Third Kind" when separated by country? Our hope is that this will help examine how time impacts UFO reports worldwide.
 
 Ethical issues do not seem to be an issue with this data set, because we do not have any personal information about the sources of the data. All of the data is anonymous and has no identifying information which eliminates ethical concerns.
 
@@ -49,6 +49,10 @@ In the late 1940s, the Air Force began a study called Project Sign (later called
 This study found that of the 12,618 UFO sightings over the period of the study, only 701 could not be explained. I could not find much about the design, but it seemed to be focused on dividing aerial phenomena into "unidentified" and "identified" objects.
 
 This report on Project Sign connects to our research by demonstrating the necessity of expanding on visualizing what UFOs look like. It provides a good basis for initial research into UFOs, but our research will respond to a more detailed and recent data set. While this Air Force study was likely groundbreaking for its time, our research will work on evaluating similarities and differences in UFO sightings beyond just classifying a phenomenon as "unidentified". We also have fewer limitations on analyzing the data - in the context of the Air Force study, the motivation was evaluating the possibility of a national security threat. Our study provides a broader perspective, both beyond national security interests and beyond American borders.
+
+In 1977, the Spielberg film "Close Encounters of the Third Kind"\* was released, and it became a blockbuster. The film tells the story of an ordinary American who becomes interested in UFOs after sighting one in his hometown. The popularity of this film led us to think it may have influenced people to "look" for UFOs or be more equipped to identify one in 1977 and after.
+
+\*Link to info about the film: https://www.imdb.com/title/tt0075860/?ref\_=ttrel_ov_i
 
 [**Link to study:**]{.underline} https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/UFOsandUAPs/2d_af_1.pdf
 
